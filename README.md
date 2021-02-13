@@ -25,7 +25,7 @@ Objetivos
 	+ Experimentar la conveniencia de resolver problemas cotidianos con bloques concretos de instrucciones.    
 	+ Conocer la problemática que enfrenta la operación de vida con relación a la tendencia de las tasas de interés de largo plazo.  
 	+ Generar un mapa mental de las variables que afectan a la operación de vida y su interacción.  
-    + Generar un modelo de simulación que le permita identificar situaciones problemáticas y determinar cursos de acción.  
+    + Generar un modelo de simulación de la evolución de un portfolio de vida, que permita identificar situaciones problemáticas y determinar cursos de acción.  
 
 
 
