@@ -1,4 +1,4 @@
-# Practica Actuarial 01, "Efecto de un entorno de tasas de interes bajas en el seguro de vida"
+# Practica Actuarial 01, "Efecto de un entorno de tasas de interés bajas en el seguro de vida"
 
 ## En general
 
@@ -13,14 +13,15 @@
         También es recomendable que tengan conocimiento de la problemática que se trata en cada práctica.
 		
     4.	¿Qué software necesito para participar en las Prácticas Actuariales? 
-        Las prácticas están realizadas para que corran en R en un equipo que tenga acceso a Internet; es necesario instalar **RStudio** para ejecutar el curso y **GitHub** para tener acceso al espacio colaborativo, recomendamos instalar ambos para que tu experiencia sea lo mas enriquecedora posible.
+        Las prácticas están realizadas para que corran en R en un equipo que tenga acceso a Internet; es necesario instalar **RStudio** para ejecutar el curso y **GitHub** para tener acceso al espacio colaborativo, recomendamos instalar ambos para que tu experiencia sea lo más enriquecedora posible.
     
 	5.	¿Cuánto tiempo me va a llevar terminar las Prácticas Actuariales?  
         Las prácticas están planteadas para realizarse en ocho horas, pero depende de cuánto tiempo dediques a realizar los ejercicios. 	
 
-## Esta pratica
+## Esta práctica
 
-Objetivos  
+### Objetivos
+
     + Desarrollar modelos simples utilizando conceptos actuariales que sirvan para introducir la funcionalidad básica de R.   
 	+ Experimentar la conveniencia de resolver problemas cotidianos con bloques concretos de instrucciones.    
 	+ Conocer la problemática que enfrenta la operación de vida con relación a la tendencia de las tasas de interés de largo plazo.  
