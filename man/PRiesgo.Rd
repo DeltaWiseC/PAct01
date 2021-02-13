@@ -21,7 +21,7 @@ PRiesgo(Edad,Tabla,Tasa,PlazoSeg,PlazoPag,Dotal,Fsel,Persis)
 \item{Fsel}{Factores de selección  0 no  1-c(.6,.85)  2-c(.75,.90)   3-c(.8,.95)}
 \item{Persis}{Factores de persistencia   0- no   1-c(1,.75,.85,0.90,0.92,0.94,0.96) 2-c(1,.70,.80,0.85,0.90,0.92,0.95)  3-c(1,.80,.88,0.92,0.94,0.96,0.98)}
 }
-}
+
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
