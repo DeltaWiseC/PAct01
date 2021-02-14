@@ -1163,7 +1163,7 @@ TablaMx[Conjunto[which(Conjunto%%3==0)]-11,]
 ### <span style="color: brown">Causas y Efectos de variaciones de la tasa de interes en un portafolio de inversión
 
 
-<details> <summary>Causas  </summary>
+<details> <summary><span style="color: brown">Causas  </summary>
 
 
 <span style="color: brown">En primera instancia y sin adentrarnos mucho en teoría macroeconómica sobre las relaciones entre ahorro, crédito, consumo, inversión, tasa de interés real y política económica de los gobiernos, conviene señalar que existe una relación proporcional entre la tasa de interés real y el nivel de ahorro, esto es, mientras más alta sea la tasa de interés real mayor será el atractivo que de los instrumentos de ahorro, mientras que resulta inversamente proporcional la relación entre la tasa de interés real y la inversión, de manera que mientras más alta sea la tasa de interés real menos atractivo será la inversión y menores los montos de la misma.
@@ -1203,19 +1203,19 @@ TablaMx[Conjunto[which(Conjunto%%3==0)]-11,]
 <span style="color: brown">En las gráficas siguientes se puede advertir con mucha claridad cómo el descenso en las tasas de interés está afectando a las aseguradoras. De manera delicada a partir de 2015 en México y en el mundo a partir del año 2000
 
 
-<details> <summary>En México</summary>
+<details> <summary><span style="color: brown">En México</summary>
 
-![ ](C:/Users/queza/OneDrive/Documentos/PracticasActuariales/Calentamiento/Calentamiento/Calentamiento_files/figure-html/NalTendB.png)
+![ ](images/NalTendB.png)
 
-![ ](C:/Users/queza/OneDrive/Documentos/PracticasActuariales/Calentamiento/Calentamiento/Calentamiento_files/figure-html/NalTendU.png)
+![ ](images/NalTendU.png)
 
 
 https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/insurance/insurance-pdfs/ey-nextwave-insurance-life-retirement.pdf
 </details>
 
-<details> <summary>En el mundo</summary>
+<details> <summary><span style="color: brown">En el mundo</summary>
 
-![ ](C:/Users/queza/OneDrive/Documentos/PracticasActuariales/Calentamiento/Calentamiento/Calentamiento_files/figure-html/InterTendencia.png)
+![ ](images/InterTendencia.png)
 </details>
 
 
@@ -1308,7 +1308,7 @@ The Geneva Papers on Risk and Insurance Vol. 25 No. 1 (January 2000)
 
 <span style="color: brown">La rentabilidad llama a ser conservador en cuanto al nivel que deben tomar los parámetros de un producto; pero la competitividad empuja a ser agresivo para determinar los mismos parámetros; encontrar el equilibrio es un arte.
 
-<details> <summary>Rediseño de productos</summary>
+<details> <summary><span style="color: brown">Diseño de productos</summary>
 
 <span style="color: brown">En un entorno de tasas bajas los cargos de operación son mas evidentes ya que los rendimientos financieros no compensan los cargos por gastos de operación y adquisición, esto se debe a que la estructura de gastos de la aseguradora incluye tanto el componente de protección como el de ahorro (en los esquemas tradicionales de comercializacion de agente/promotor su ingreso es un porcentaje de la prima total, lo que encarece significativamente los costos de operación en comparación con otras instituciones financieras). Si bien en el componente de protección las aseguradoras son las unicas entidades que ofrecen una opción a la transferenicia de los riesgos biometricos, en el componente de ahorro hay un buen numero de competidores con costos de operación significativamente menores.
 
@@ -1317,7 +1317,7 @@ The Geneva Papers on Risk and Insurance Vol. 25 No. 1 (January 2000)
 </details>
 
 
-<details> <summary>Productos Unit Linked</summary>
+<details> <summary><span style="color: brown">Productos Unit Linked</summary>
 
 <span style="color: brown">En los mercados más desarrollados los aseguradores han adoptado una posición conservadora en cuanto a incluir garantías de tasa de interés en sus contratos, por medio de productos llamados "Unit Linked" (UL): En estos el riesgo de inversión se transfiere al contratante, para ello cada póliza cuenta con dos fondos, el fondo base y el fondo excedente. El fondo base recibe los recursos para mantener vigente el contrato de seguro, de aquí se descuenta el costo del seguro, los gastos de administración y los gastos de adquisición; cuando se agoten los recursos del fondo base se toman los recursos suficientes del fondo excedente para mantener vigente la póliza; cuando se agoten los dos fondos, la póliza termina dado que no hay recursos para mantenerla. 
 
@@ -1327,7 +1327,7 @@ The Geneva Papers on Risk and Insurance Vol. 25 No. 1 (January 2000)
 
 </details>
 
-<details> <summary>Hedging</summary>
+<details> <summary><span style="color: brown">Hedging</summary>
 
 <span style="color: brown">El Hedging consiste en adquirir un instrumento financiero (Derivados) que compense el riesgo de eventos que afecten el desempeño esperado de una variable; en el caso de las tasas de interés puede ser una opción que se active en el escenario de que la tasa de referencia baje de cierto nivel, el instrumento pagaría el diferencial de tasas. 
 <span style="color: brown">La semejanza de estos Derivados con los seguros es notable, Peter Bernstein marco en su libro "Against the Gods: The Remarkable Story of Risk”:
@@ -1349,7 +1349,7 @@ The Geneva Papers on Risk and Insurance Vol. 25 No. 1 (January 2000)
 
 </details>
 
-<details> <summary>Calce entre Activos y Pasivos</summary>
+<details> <summary><span style="color: brown">Calce entre Activos y Pasivos</summary>
 <span style="color: brown">Hemos visto que los contratos de seguros de vida son de largo plazo y que durante este periodo la compañía tiene la necesidad de proyectar flujos de entrada y salida, considerando las provisiones (reservas) que se generan y las correspondientes inversiones.  De esta forma en el diseño del portafolios de activos deben estar disponibles en el momento que se requiera (contar con recursos líquidos) a la vez de que se busca tener instrumentos que paguen al menos una tasa mayor a la tasa técnica, al momento que los instrumentos vigentes venzan (Riesgo de reinversión).
 
 <span style="color: brown">Consideremos la definición que hace la Asociación internacional de actuarios sobre el proceso de calce de activos y pasivos:
@@ -1447,7 +1447,7 @@ if(VecB[4]<=VecA[1])  # En este caso se debe indicar el paquete de instrucciones
 }    
 
 ```
-### 3.2 función **for** 
+### <span style="color: navy"> 3.2 función **for** 
 
 <span style="color: navy">Esta función sirve para repetir hasta  cierto número de veces una parte del código.
 
@@ -1662,8 +1662,8 @@ paste("Numero de veces en el ciclo",i)
    
 <span style="color: navy">Variables de entrada
 
-    - <span style="color: navy">Edad del solicitante, determina el patron de reclamaciones y pago de primas
-    - <span style="color: navy">Sexo del solicitante, en caso de que se realicen descuentos en la edad de calculo
+    <span style="color: navy">- Edad del solicitante, determina el patron de reclamaciones y pago de primas
+    <span style="color: navy">- Sexo del solicitante, en caso de que se realicen descuentos en la edad de calculo
     - <span style="color: navy">Tipo de plan, Temporal, Ordinario de Vida, Dotal
     - <span style="color: navy">Plazo de seguro, 
     - <span style="color: navy">Plazo e pago
@@ -1912,13 +1912,13 @@ abline(h=0,col="red")
 
 <span style="color: brown">Entre ellos podemos incluir costos por atraer y distribuir la póliza, gastos de adquisición, gastos de administración, costo de reaseguro, costo de capital, supuestos de persistencia y valores de rescate implícitos en los contratos, esto es: 
 
-**<span style="color:darkblue">Gastos de Adquisición:</span>** Incluyen costos incurridos por suscribir un nuevo contrato, vamos a clasificarlos: 
+**<span style="color:brown">Gastos de Adquisición:</span>** Incluyen costos incurridos por suscribir un nuevo contrato, vamos a clasificarlos: 
 
  <span style="color: brown">**1. Los que son necesarios para evaluar el riesgo y emitir la póliza:** Son los costos por el proceso de contratación, pruebas médicas, investigación en caso de sumas aseguradas altas, emisión y entrega de la póliza. 
 
  <span style="color: brown">**2. Los que se derivan de las operaciones para hacer llegar el producto al mercado:** Estos dependen del esquema de distribución/comercialización de la compañía, las variantes son muchas y van desde esquemas directos en los que la compañía promueve con sus propios recursos la contratación, hasta los indirectos como los que se realizan en las áreas de seguros de los bancos, cuya promoción y contratación se realiza en la sucursal bancaria y con los recursos del banco, así como los esquemas de promoción y de agencias, en los que asesores de una red especializada promueven, orientan y acompañan en los procesos de contratación.
 
-<span style="color: brown">**<span style="color: darkblue">Gastos de Administración:</span>** Son los costos de actividades orientadas a cumplir con los beneficios del contrato; incluyen todas las áreas administrativas, técnicas, operativas y de servicio, funciones como cobranzas, sistemas, desarrollo de productos, cálculo de reservas, auditoría, recursos humanos, gestión de reaseguro.
+<span style="color: brown">**Gastos de Administración:</span>** Son los costos de actividades orientadas a cumplir con los beneficios del contrato; incluyen todas las áreas administrativas, técnicas, operativas y de servicio, funciones como cobranzas, sistemas, desarrollo de productos, cálculo de reservas, auditoría, recursos humanos, gestión de reaseguro.
 
 <span style="color: brown">Esta clasificación es relevante ya que algunos de estos gastos están ligados al monto de la suma asegurada / capital en riesgo y su tratamiento en los modelos de Pricing es diferente, asimismo es relevante el momento en el que se realizan los servicios, ya que en los modelos los costos asociados se provisionan y nivelan.
 
@@ -1936,27 +1936,27 @@ Irina Fan, et al. 2020 "Lower for even longer: what does the low interest rate e
 
 
 
-## E-4: Funciones {data-progressive=TRUE}
+## <span style="color: navy">E-4: Funciones {data-progressive=TRUE}
 
-Complementario a las funciones que R ya tiene integradas, nosotros como usuarios podemos desarrollar una nueva función; recordemos que una función es un conjunto de instrucciones, las cuales operan parámetros de entrada para producir un resultado concreto, de manera que, si una parte del código se repite más de una vez, entonces esta sección será un buen candidato para crear una función.
+<span style="color: navy">Complementario a las funciones que R ya tiene integradas, nosotros como usuarios podemos desarrollar una nueva función; recordemos que una función es un conjunto de instrucciones, las cuales operan parámetros de entrada para producir un resultado concreto, de manera que, si una parte del código se repite más de una vez, entonces esta sección será un buen candidato para crear una función.
 
-Entre las ventajas que tiene crear una función están:
+<span style="color: navy">Entre las ventajas que tiene crear una función están:
 
-- El código es más compacto y entendible.
-- Reduce la posibilidad de errores de copiar y pegar el código.
-- Facilita la actualización o modificación del código.
-- Homologa el manejo de parámetros y resultados.
+<span style="color: navy">- El código es más compacto y entendible.
+<span style="color: navy">- Reduce la posibilidad de errores de copiar y pegar el código.
+<span style="color: navy">- Facilita la actualización o modificación del código.
+<span style="color: navy">- Homologa el manejo de parámetros y resultados.
 
-Para declarar una función la sintaxis es:
+<span style="color: navy">Para declarar una función la sintaxis es:
 
-*NombreFunción*<-function(*Argumentos*){*Procedimiento -- entregable*}
+<span style="color:navy">*NombreFunción*<-function(*Argumentos*){*Procedimiento -- entregable*}
 
-- **NombreFuncion**: Identificador del objeto creado en R con el que se llama el procedimiento
-- **Argumentos**: Parámetros de entrada a considerar en el procedimiento   
-- **Procedimiento**: Algoritmo con el que opera/modifica las variables de entrada y propias de la función para producir el resultado entregable
-- **Entregable**: Variables de respuesta que produce el algoritmo
+<span style="color: navy">- **NombreFuncion**: Identificador del objeto creado en R con el que se llama el procedimiento
+<span style="color: navy">- **Argumentos**: Parámetros de entrada a considerar en el procedimiento   
+<span style="color: navy">- **Procedimiento**: Algoritmo con el que opera/modifica las variables de entrada y propias de la función para producir el resultado entregable
+<span style="color: navy">- **Entregable**: Variables de respuesta que produce el algoritmo
 
-Veamos nuestro primer ejemplo:
+<span style="color: navy">Veamos nuestro primer ejemplo:
 
 ```{r Fun11,exercise=TRUE, exercise.cap="Ejemplo 1. Declaración de Funciones"}
 
@@ -2002,25 +2002,25 @@ IMC<-function(Peso,Alt){
 ```
 
 
-El siguiente ejemplo determina las tasas de los instrumentos libres de riesgo para un periodo continuo de tiempo.
+<span style="color: navy">El siguiente ejemplo determina las tasas de los instrumentos libres de riesgo para un periodo continuo de tiempo.
 
-Recordemos que **la tasa libre de riesgo**, es la alternativa que tiene el inversionista para colocar sus recursos sin asumir ningún riesgo crediticio ni riesgo de reinversión, esto es que la entidad que emitió el documento siempre va a cumplir con sus compromisos y que al vencimiento del documento va a estar disponible otro documento con al menos los mismos rendimientos.
+<span style="color: navy">Recordemos que **la tasa libre de riesgo**, es la alternativa que tiene el inversionista para colocar sus recursos sin asumir ningún riesgo crediticio ni riesgo de reinversión, esto es que la entidad que emitió el documento siempre va a cumplir con sus compromisos y que al vencimiento del documento va a estar disponible otro documento con al menos los mismos rendimientos.
 
-Para el caso del mercado mexicano la tasa libre de riesgo esta determinada por la tasa que pagan los documentos gubernamentales, para los instrumentos en moneda nacional, tenemos:
+<span style="color: navy">Para el caso del mercado mexicano la tasa libre de riesgo esta determinada por la tasa que pagan los documentos gubernamentales, para los instrumentos en moneda nacional, tenemos:
 
 
-Obs \ Plazo|1 año |3 años|5 años|10 años|20 años|30 años
------------|------|------|------|-------|-------|--------
-Sep 20     |4.45% |  4.56|  4.87| 5.68  |   6.66|  6.98%
-Nov 20     |4.32% |  4.55|  4.89| 5,98  |   6.95|  7.20%
-Dic 21 Pro |2.04% |  2,62|  3.38| 5.15  |   6.42|  6.74%
-<font size ="1"> Fuente:www.worldgovermentbonds.com</font>
+<span style="color: navy">Obs \ Plazo|1 año |3 años|5 años|10 años|20 años|30 años  
+<span style="color: navy">-----------|------|------|------|-------|-------|--------  
+<span style="color: navy">Sep 20     |4.45% |  4.56|  4.87| 5.68  |   6.66|  6.98%  
+<span style="color: navy">Nov 20     |4.32% |  4.55|  4.89| 5,98  |   6.95|  7.20%  
+<span style="color: navy">Dic 21 Pro |2.04% |  2,62|  3.38| 5.15  |   6.42|  6.74%  
+<span style="color: navy"><font size ="1"> Fuente:www.worldgovermentbonds.com</font>  
 
-Las tasas libres de riesgo, se utilizan en los modelos de seguros para descontar los flujos de la empresa y determinar la rentabilidad del negocio, entre otras cosas.
+<span style="color: navy">Las tasas libres de riesgo, se utilizan en los modelos de seguros para descontar los flujos de la empresa y determinar la rentabilidad del negocio, entre otras cosas.
 
-El problema que se presenta es que la curva de tasas tiene ciertos nodos, en este caso 1,3 5, 10, 20 y 30 años, mientras que el portafolio tiene vencimientos todos los años.
+<span style="color: navy">El problema que se presenta es que la curva de tasas tiene ciertos nodos, en este caso 1,3 5, 10, 20 y 30 años, mientras que el portafolio tiene vencimientos todos los años.
 
-Para ello tomaremos los nodos disponibles y proyectaremos las tasas de los plazos intermedios, esto lo haremos con una interpolación lineal.
+<span style="color: navy">Para ello tomaremos los nodos disponibles y proyectaremos las tasas de los plazos intermedios, esto lo haremos con una interpolación lineal.
 
 ```{r Fun01, exercise=TRUE, exercise.cap="Creación de Funciones de Usuario" }
 
@@ -2098,7 +2098,7 @@ theme_light()
 
 ```
 
-En esta sección vamos a retomar el código para el cálculo de la prima de riesgo y de tarifa y lo vamos a declarar como una función con el objeto de calcular estas primas para un conjunto de edades, asi mismo, habilitaremos el campo de tasa de Interés para que pueda recibir como parámetro un vector y calcular los flujos con una curva de tasas de Interés.
+<span style="color: navy">En esta sección vamos a retomar el código para el cálculo de la prima de riesgo y de tarifa y lo vamos a declarar como una función con el objeto de calcular estas primas para un conjunto de edades, asi mismo, habilitaremos el campo de tasa de Interés para que pueda recibir como parámetro un vector y calcular los flujos con una curva de tasas de Interés.
 
 
 ```{r FunPrimas, exercise=TRUE, echo=FALSE}
@@ -2578,14 +2578,13 @@ CF<-function(Edad,Tabla,Tasa,PlazoSeg,PlazoPag=0,Dotal=0,Fsel=0,Persis=0,Gvar,Gf
 
 
 
-## L-5: Caso: Seguros El Fenix {.tabset}
+## <span style="color: brown">L-5: Caso: Seguros El Fenix {.tabset}
 
-### La Cartera
+### <span style="color: brown">La Cartera
 
-A lo largo de los años y administraciones, la compañia de Seguros FENIX ha consolidado un portafolio de alrededor de 100 mil polizas de vida individual, caracterizado por cuatro bloques de negocio
+<span style="color: brown">A lo largo de los años y administraciones, la compañia de Seguros FENIX ha consolidado un portafolio de alrededor de 100 mil polizas de vida individual, caracterizado por cuatro bloques de negocio
 
-
-
+<span style="color: brown">
 | Bloque  | Años de Promoción  | Polizas   | Suma Asegurada| Reserva  |
 |:--------|-------------------:|----------:|--------------:|---------:|
 |Gen-X    |  1985-2004         |  17931    |       5384    |          |  
@@ -2595,12 +2594,12 @@ A lo largo de los años y administraciones, la compañia de Seguros FENIX ha con
 |---------|--------------------|-----------|---------------|----------|
 
 
-#### <span style="color: darkblue">Gen X</span>  
+#### <span style="color: chocolate">Gen X</span>  
 <details> <summary>Click para expandir/contraer!</summary>
 
-* **Mercado objetivo:** Población economicamente activa, con capacidad de ahorro de al menos 10% de su ingreso, oferta comercial en planes con un fondo asociado, participación de utilidades sobre reservas. Distribución por sexo 70% masculino, 30% femenino, suma asegruada promedio $300,000 Mx
+* <span style="color: brown">**Mercado objetivo:** Población economicamente activa, con capacidad de ahorro de al menos 10% de su ingreso, oferta comercial en planes con un fondo asociado, participación de utilidades sobre reservas. Distribución por sexo 70% masculino, 30% femenino, suma asegruada promedio $300,000 Mx
 
-* **Estructura de planes:**
+* <span style="color: brown">**Estructura de planes:**
     - Temporal 20                60%  
     - Ordinario de Vida          15%  
     - Temporal a edad alcanzada  10%      
@@ -2716,18 +2715,18 @@ El escenario esperado para las tasas de interes es que sigan a la baja y que lle
 
 
 
-## E-5: El reto de las tasas de interés bajas {data-progressive=TRUE}
+## <span style="color: navy">E-5: El reto de las tasas de interés bajas {data-progressive=TRUE}
 
-Hasta ahora hemos construido un modelo de pricing y un modelo de cash flow, ambos aplican en el diseño de un plan, en ese momento hicimos nuestra mejor estimación sobre los diferentes parámetros que determinan el plan de tal forma que cumplen con  los objetivos de los diferentes participantes, en resumen podemos decir que construir un **modelo actuarial** es hacer una representación de la realidad identificando factores e interacciones entre ellos que nos llevan a un resultado determinado,   establecer sus relaciones, construir métricas de seguimiento, identificar y analizar tendencias son tareas que combinan  ciencia, tecnología y arte, encontrar matices, momentos, ritmos y perspectivas, mezclarlo con algoritmos, herramientas, teoremas y probabilidades es un reto que vale la pena tomar.
+<span style="color: navy">Hasta ahora hemos construido un modelo de pricing y un modelo de cash flow, ambos aplican en el diseño de un plan, en ese momento hicimos nuestra mejor estimación sobre los diferentes parámetros que determinan el plan de tal forma que cumplen con  los objetivos de los diferentes participantes, en resumen podemos decir que construir un **modelo actuarial** es hacer una representación de la realidad identificando factores e interacciones entre ellos que nos llevan a un resultado determinado,   establecer sus relaciones, construir métricas de seguimiento, identificar y analizar tendencias son tareas que combinan  ciencia, tecnología y arte, encontrar matices, momentos, ritmos y perspectivas, mezclarlo con algoritmos, herramientas, teoremas y probabilidades es un reto que vale la pena tomar.
 
-Como mencionamos al momento del diseño del plan hicimos nuestra mejor estimación de los parámetros técnicos, fuimos prudentes determinando el valor de cada uno de ellos para manejar los riesgos dentro del apetito de riesgo establecido y fuimos lo suficientemente agresivos para posicionar el producto como atractivo para los asegurados y canal de distribución. Pese a todos nuestros esfuerzos y buena disposición lo anterior no es suficiente ya que el entorno de negocio es dinámico y debemos tener una idea del comportamiento de nuestra cartera con la situación actual del entorno de negocio.
+<span style="color: navy">Como mencionamos al momento del diseño del plan hicimos nuestra mejor estimación de los parámetros técnicos, fuimos prudentes determinando el valor de cada uno de ellos para manejar los riesgos dentro del apetito de riesgo establecido y fuimos lo suficientemente agresivos para posicionar el producto como atractivo para los asegurados y canal de distribución. Pese a todos nuestros esfuerzos y buena disposición lo anterior no es suficiente ya que el entorno de negocio es dinámico y debemos tener una idea del comportamiento de nuestra cartera con la situación actual del entorno de negocio.
 
-Des esta forma tenemos dos situaciones fundamentales que debemos atender
+<span style="color: navy"> De esta forma tenemos dos situaciones fundamentales que debemos atender
 
-i) Administrar un portafolio de pólizas  
-ii) Desarrollar un nuevo plan
+i) <span style="color: navy">Administrar un portafolio de pólizas  
+ii)<span style="color: navy"> Desarrollar un nuevo plan
 
-En este ejercicio vamos utilizar el ejercicio de Cash FLow y aplicarlo al portafolio comparando los resultados utilizando los parámetros de origen,los actualizados y los parámetros esperados, haciendo especial énfasis en las tasas de interés. 
+<span style="color: navy">En este ejercicio vamos utilizar el ejercicio de Cash FLow y aplicarlo al portafolio comparando los resultados utilizando los parámetros de origen,los actualizados y los parámetros esperados, haciendo especial énfasis en las tasas de interés.
 
 
 ```{r Reto001, exercise=TRUE, exercise.cap="Escenarios ",exercise.setup="CashFlow"}
