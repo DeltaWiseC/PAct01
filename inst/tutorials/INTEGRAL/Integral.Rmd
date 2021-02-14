@@ -169,12 +169,12 @@ Cubo<- Indice^3
 <span style="color: brown">La forma en que se busca alcanzar estos objetivos define el entorno de los negocios de cada compañía, los cuales tienen como elemento común la necesidad de proyectar flujos de efectivo, de entrada y de salida, en condiciones inciertas y de largo plazo.  
 
 <details> <summary><span style="color: brown">Modelo de Cash Flow:\   \   \ Click para expandir/contraer!</summary>
-![](C:/Users/queza/OneDrive/Documentos/PracticasActuariales/Calentamiento/Calentamiento/Calentamiento_files/figure-html/CashFlow.png)
+![](images/CashFlow.png)
 </details>
 \
 
 <details> <summary><span style="color: brown">Riesgos que afectan el valor económico de los pasivos: \ \  Click para expandir/contraer!</summary>
-![](C:/Users/queza/OneDrive/Documentos/PracticasActuariales/Calentamiento/Calentamiento/Calentamiento_files/figure-html/VidaRiesgo.png)
+![](images/VidaRiesgo.png)
 </details>
 
 \
@@ -423,9 +423,9 @@ Condicion<- 25<=IMC & IMC <30
 
 <details> <summary>Evolucion de la Mortalidad Mexicana      Click para expandir/contraer!</summary>
 
-![ ](C:/Users/queza/OneDrive/Documentos/PracticasActuariales/Calentamiento/Calentamiento/Calentamiento_files/figure-html/EvolMort.png)
+![ ](images/EvolMort.png)
 
-![ ](C:/Users/queza/OneDrive/Documentos/PracticasActuariales/Calentamiento/Calentamiento/Calentamiento_files/figure-html/ComparativoMortalidad.png)
+![ ](images/ComparativoMortalidad.png)
 
 </details>
 
