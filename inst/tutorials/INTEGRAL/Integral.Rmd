@@ -26,14 +26,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <style> body {text-align: justify} </style>
 
-Nuevamente te agradezco que estés realizando esta practica actuarial.
-
 
 # <span style="color: brown">Lecturas -<span style="color: navy">- Ejercicios
 
+Nuevamente te agradezco que estés realizando esta practica actuarial.
+
 ## <span style="color: brown">L-0: Preambulo  
 
-<span style="color: brown">Esta práctica actuarial es un taller en el que desarrollaras  modelos actuariales para la toma de decisiones, considerando como herramienta el lenguaje R, en esta ocasión en torno a temas de pricing y seguimiento de un portafolio de vida individual, tomando la problemática que representan las tasas de interés bajas.
+
+<span style="color: brown">Esta práctica actuarial es un taller enel que desarrollaras  modelos actuariales para la toma de decisiones, considerando como herramienta el lenguaje R, en esta ocasión en torno a temas de pricing y seguimiento de un portafolio de vida individual, tomando la problemática que representan las tasas de interés bajas.
 
 <span style="color: brown">El nivel de la práctica es para principiantes en lo referente al lenguaje R e intermedio en lo que se refiere a conceptos técnicos. De hecho las practicas de R podemos considerlas como introductorias al lenguaje, por lo que quedan bien para alguien que quiere iniciarse en esta practica.
 
@@ -42,17 +43,16 @@ Nuevamente te agradezco que estés realizando esta practica actuarial.
 <span style="color: brown">La practica la integral los siguientes elementos:
 
 + <span style="color: brown">**Video:** que es una guía de todo el curso y viene a sustituir a las sesiones presenciales de un curso tradicional.
-+ <span style="color: brown">**Prácticas en R:** Constituidas por un bloque de ejercicios en R, en el que podrás codificar en R.
-+ <span style="color: brown">**Lecturas y Materiales:** Espacio en el que encontrarás definiciones, datos, lecturas y referencia a artículos relacionados con los temas tratados. 
-+ <span style="color: brown">**Espacio colaborativo de la práctica** Medio que te permitirá plantear tus dudas y sugerencias, conocer las inquietudes de la comunidad que ha participado en el taller, contribuir a un proyecto comunitario e interactuar con el instructor y otros participantes del taller.  
++ <span style="color: brown">**Lecturas y Ejercicios en R:** Constituidas esta aplicación en la que encontraras una serie de lecturas (en café) y bloques de ejercicios en R (en azul)  
++ <span style="color: brown">**Espacio colaborativo de la práctica** Medio que te permitirá plantear tus dudas y sugerencias y lo mas importante, contribuir en un proyecto colectivo que fortalezca la practica actuarial en español.  
 
 
-<span style="color: red">Para entrar al espacio colaborativo necesitas dar de alta una cuenta de GitHub y buscar praticas actuariales</span>
+<span style="color: brown">Para participar en este  espacio  necesitas dar de alta una cuenta de GitHub y buscar "DeltaWiseC" o "Practicas actuariales"</span>
 
-<span style="color: brown">El espacio de Lecturas y Materiales también te ayudará para dar contexto a los elementos técnicos. 
+<span style="color: brown">El objetivo de las lecturas es darle contexto a los elementos técnicos y revisar la situció de la problemática del tema de la práctica. 
 
-+ <span style="color: brown">Establecer un contexto general de la problemática del tema de la práctica. 
 + <span style="color: brown">Indicar algunas opciones/problemas a los que se enfrenta la administración de una empresa, sin que haya una respuesta correcta o incorrecta de las situaciones presentadas; el lector deberá establecer una acción (reunir y alinear diferentes elementos) coherente desde una o varias perspectivas.
+
 + <span style="color: brown">Presentar material complementario (con enlaces a internet).
 
 
@@ -187,17 +187,26 @@ Cubo<- Indice^3
 
 <span style="color: brown">En este ambiente incierto lo único que nos queda es recopilar información, analizarla, identificar tendencias y construir modelos prácticos para determinar la situación de cada compañía/entidad, si prevalecerá la tendencia o en su defecto si habrá que emprender acciones para modificarla. En este sentido, los modelos de solvencia dinámica que establece la legislación mexicana pueden ser de mucha ayuda, pero cabe advertir que todavía estamos lejos de que estos modelos sean empleados por los tomadores de decisiones.  
 
-## <span style="color: navy">E-1: Variables y Operadores Aritmeticos {data-progressive=TRUE}
+## <span style="color: navy">E-1: Variables y Operadores{data-progressive=TRUE}
 
 
 <span style="color: navy">Una vez que sabemos cómo manejar las secciones de código, *!empecemos con los ejercicios!*
 
-<span style="color: navy">En esta sección utilizarás los diferentes operadores aritméticos, así como algunas funciones generales.
+<span style="color: navy">En esta sección vas a crear e inicializar variables en R,  utilizarás operadores aritméticos y lógicos y conoceras algunas funciones generales.
 
 
 ```{r EJER01, exercise=TRUE,exercise.cap="Variables y operadores aritmeticos"}
 
-# inicializar variables, observa que en una solo línea de código se pueden realizar diferentes asignaciones  
+# Una variable en R es un espacio de memoria que se puede recuperar mediante un nombre 
+# y que conserva diferentes atributos, entre ellos un valor
+
+# Para crear una variable y asignarle un valor R utiliza la sintaxis "<-", tambien es factible utilizas "->"
+
+# Lo interpretaremos como a la variable 'NOMBRE' se le asigna 'VALOR'
+
+tasa <- 0.04  # Asigna el valor de 0.04 a una espacio de memoria que recuperar con la referencia "tasa" 
+
+# Inicializar variables, observa que en una solo línea de código se pueden realizar diferentes asignaciones  
 
 i <- tasa <- .04 ; n <- plazo <- 10
 
@@ -207,15 +216,17 @@ i <- tasa <- .04 ; n <- plazo <- 10
 
 # Formulamos la variable de respuesta
 
-VP <- (1-(1+tasa)^(-plazo))/tasa   
 vp <- (1-(1+i)^(-n))/i
+
+VP <- (1-(1+tasa)^(-plazo))/tasa   
+
 
 # Desplegamos en pantalla el resultado, usamos una variable *character*
 
 Nombre <- "valor presente una anualidad cierta "
 paste (Nombre,VP," por ",plazo," años y ",tasa," tasa de interés")
 
-# Ahora te corresponde escribir el código de renta y Vpf
+# De la formula de la anualidad obten la expresión para determinar la renta necesaria para llegar a un VP dado
 
 # Cual es el monto de la renta para alcanzar un valor presente de 10,000 en un plazo de 10 años a una tasa de Interés de 5% anual, 
 
@@ -225,24 +236,55 @@ renta <- << Tu código >>
   
 VPf <-  << Tu código >>
 
+# Despliega en la pantalla el resultado de renta y VPf
+
+<< Tu código >>
+
+# Recuerda la sintaxis de las operaciones aritméticas  
+A <- 4  ; B <- 2
+#     Suma          Resta         Multiplicación 
+  Res1 <- A+B ; Res2 <- A - B   ; Res3 <- A*B 
+
+#  División       Parte Entera       Modulo
+ Res4 <- A/B ; Res5 <- A %/% B ; Res6 <- A %% B
+
+#   Potencia
+  Res7 <- A^B
+  
+
 ```
 
 <div id="EJER01-hint">
 **Hint:** <span style="color: navy">Despeja la variable y digita la formula.
 </div>
 
-<span style="color: navy">Cuando la tasa de interés es una incógnita vamos a mostrar un proceso gráfico del cálculo del valor presente con diferentes tasas.
+<span style="color: navy">Cuando la tasa de interés es una incógnita se puede utilizar una técnica de interpolación para determinar la tasa que cumple con la ecuación, en este caso vamos a realizar este proceso de forma gráfica (identifica el comando). 
 
 ```{r tasa00, exercise=TRUE, exercise.cap="Operadore aritmeticos, graficos básicos"}
+# En este caso la variable tasa tiene varios valores, mas adelante lo definiremos como un vector
+
 tasa<-c(0.01,0.05,0.07,0.09,0.12)
+
 pago<-1300
 plazo<-10
+
+# las formulas aritmeticas aceptan vectores y en este caso genera un vector de Valores presentes
 VP <- pago*(1-(1+tasa)^(-plazo))/tasa 
-plot(tasa,VP, xlab="Tasa de Interes",ylab="Valor Presente",main="Grafica Original")
+
+# Grafica los valores presentes
+plot(tasa,VP, xlab="Tasa de Interes",ylab="Valor Presente",main="Grafica")
 abline(a=10000,b=0,col="red")
 
 
-# Modifica los valores de tasa alrededor de 5% y vuelve a correr el ejercicio
+# Una forma de inicializar variables es asignandole el resultado de una 
+# función, en este caso vamos a utilizar la función seq "sequence" para 
+# inicializar a variable, sustituye la asignación inicial de la variable tasa por
+# la siguiente expresión y corre nuevamente el código:
+# tasa<-seq(from=0.0495,to=0.051, by=0.0001)
+
+# También puedes modificar los parámetros de la gráfica, títulos, colores
+
+# Corre nuevamente el codigo
 
 
 ```
@@ -260,6 +302,26 @@ question("Verifica las expresiones aa<-23%%2==1; sum(aa) ¿Determina si es váli
 
 ```
 
+```{r Ejer10, exercise=TRUE,exercise.cap="Operadores Lógicos"}
+
+# R puede hacer comparaciones logicas entre las variables el resultado es TRUE-VERDADERO / FALSE-FALSO
+
+Compara <- pi < exp(1)
+
+paste("valor de Compara ", Compara, "  negación de Compara ", !Compara)
+
+# Recuerda la sintaxis de las comparaciones lógicas 
+A<-4  ; B<-2
+
+#     Mayor     Mayor o Igual        Menor  
+  Log1 <- A > B; Log2 <- A >= B; Log3 <- A < B
+  
+#  Menor o igual       Igual         Diferente   
+   Log4 <- A<=B ; Log5 <- A == B; Log6 <- A != B 
+
+```
+
+
 ```{r duda03, exercise.cap="Operadores Lógicos"}
 question("Verifica el resultado de la siguiente expresión A <- !(3<=(4/12+8/11) | 2>2^(1/2))",
          answer("Es verdadera, porque 2 es mayor que raiz de 2",message="Si bien 2 es mayor que raiz de dos y al evaluarlo en un expresión disyuntiva prevalece el valor verdadero, falta aplicar la negación"),
@@ -272,7 +334,7 @@ question("Verifica el resultado de la siguiente expresión A <- !(3<=(4/12+8/11)
 ```
 
 
-_<span style="color: navy">La práctica hace al maestro_, reza el refrán, sigue en esa línea, descubre el potencial de R.
+_<span style="color: navy">La práctica hace al maestro, reza el refrán, sigue en esa línea, **descubre el potencial de R**.
 
 ```{r maestro01, exercise=TRUE,exercise.cap="Practica Operadores"}
 
@@ -342,8 +404,9 @@ c<- 2<1 ; d<- 4<5
 # Manejo de operadores aritmeticos y logicos
 # Clases de variables primarias 'Numeric, 'Character','logical' y 'complex'
 # Atributos de una variable 'class' y 'length'
-# Operatividad de la funcion c(. . .), concatenar
+# Operatividad de la funcion c(. . .), combine r
 # Graficas basicas de linea (x,y) "plot"" y lineas horizontales "abline""
+# Uso de la función sequence  "seq"
 
 ```
 
@@ -437,9 +500,9 @@ Condicion<- 25<=IMC & IMC <30
 
 
 
-## E-2: Vectores {data-progressive=TRUE}
+## E-2: <span style="color: navy">Vectores {data-progressive=TRUE}
 
-<span style="color: navy">En esta sección realizaremos ejercicios con vectores.
+<span style="color: navy">En esta sección realizaremos ejercicios con vectores, entenderemos por vector la representación de una variable que tiene multiples valores de una misma clase
 
 * <span style="color: navy">Cómo se expresan y operan con escalares. 
 * <span style="color: navy">Manejo de funciones aplicadas a un vector.
@@ -789,6 +852,7 @@ TablaMx <- TablaMx[-90,]        # Elimina el renglón 90
 < < Tu Código > >  # Calcula la qx promedio en el rango 30 34
 
 ```
+ 
   
 ```{r Vec314, exercise=TRUE,exercise.cap="Operaciones con Vectores: Criterios de Busqueda", exercise.setup="Vec299"}
     
@@ -861,7 +925,7 @@ PrimaRiesgo <- (tasa/log(1+tasa))*(PriesgoNumerador/PriesgoDenominador)
 
 $P_x=A_x/$ $\ddot{a}_x$  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  En donde &nbsp; &nbsp; &nbsp; $A_x = \displaystyle\sum_{k=0}^\infty  v^{k+1} {_k}p_x q_{x+k}$; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  $\ddot{a}_x=\displaystyle\sum_{k=0}^\infty v^x {_k}p_x$ 
 
-<span style="color: navy">$$ 
+$$ 
 \begin{aligned}
  Donde: &P_x \space\space \text{Prima a edad x} \\
  &A_x \space\space \text{Prima neta única de un seguro de vida a edad x} \\
@@ -869,9 +933,10 @@ $P_x=A_x/$ $\ddot{a}_x$  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  En donde &nbsp; &nb
 \end{aligned}
 $$
 
+
 <span style="color: navy">Si $X=(x_1,x_2,\dots,x_n)$  y $Y=(y_1,y_2,\dots,y_n)$  entonces:  
-Producto punto:&nbsp; &nbsp; $X$\%*\%  $Y$=$x_1*y_1+\dots+x_n*y_n$  
-Producto estándar:  $X$\*$Y$=($x_1*y_1,\dots,x_n*y_n)$
+<span style="color: navy">Producto punto:&nbsp; &nbsp; $X$\%*\%  $Y$=$x_1*y_1+\dots+x_n*y_n$  
+<span style="color: navy">Producto estándar:  $X$\*$Y$=($x_1*y_1,\dots,x_n*y_n)$
 
 <span style="color: navy">Por lo que una vez definidos los vectores la operatividad se reduce a obtener su producto estándar y producto punto
  
@@ -1046,25 +1111,25 @@ paste("Sensibiliad  % VarPer / SinVar ",PrimaRiesgoP/PrimaRiesgo,"   %VarFac/Sin
 ```
 
 
-### 2.5.2 Reserva, Valores en efectivo y Rescates
+### 2.5.2 <span style="color: navy">Reserva, Valores en efectivo y Rescates
 
-En este ejercicio calcularemos las reservas de una póliza para un año especifico, no determinaremos el efecto de las reservas sobre las primas, ya que para ello necesitaríamos establecer el requerimiento de capital y un objetivo de rentabilidad.
+<span style="color: navy">En este ejercicio calcularemos las reservas de una póliza para un año especifico, no determinaremos el efecto de las reservas sobre las primas, ya que para ello necesitaríamos establecer el requerimiento de capital y un objetivo de rentabilidad.
 
-A pesar de que no revisaremos la interacción de las reservas con las primas si es relevante tener presente las siguientes consideraciones conceptuales.
+<span style="color: navy">A pesar de que no revisaremos la interacción de las reservas con las primas si es relevante tener presente las siguientes consideraciones conceptuales.
 
-Si bien las reservas pueden considerarse independientes del ejercicio de pricing, ya que incluso se calculan con una tabla de mortalidad recargada y una tasa de interés más baja,  tienen un efecto considerable en el requerimiento de capital, la utilidad esperada y por lo tanto en la rentabilidad del plan, como consecuencia deben incluirse en la construcción de un producto.
+<span style="color: navy">Si bien las reservas pueden considerarse independientes del ejercicio de pricing, ya que incluso se calculan con una tabla de mortalidad recargada y una tasa de interés más baja,  tienen un efecto considerable en el requerimiento de capital, la utilidad esperada y por lo tanto en la rentabilidad del plan, como consecuencia deben incluirse en la construcción de un producto.
 
-El plazo de seguro y el objetivo de compra de la póliza determinan el horizonte de inversión e influyen en el comportamiento del asegurado, en cuanto a ejercer las diferentes opciones implícitas en la póliza, lo anterior conforma la estructura de las reservas y es un factor relevante para el calculo del capital requerido en la operación de vida.
+<span style="color: navy">El plazo de seguro y el objetivo de compra de la póliza determinan el horizonte de inversión e influyen en el comportamiento del asegurado, en cuanto a ejercer las diferentes opciones implícitas en la póliza, lo anterior conforma la estructura de las reservas y es un factor relevante para el calculo del capital requerido en la operación de vida.
 
-Asi mismo el patrón de desarrollo de las reservas puede representar un problema de liquidez cuando se presenta una discrepancia temporal entre flujos de entrada y de salida en los casos que los flujos de salida son mayores, ya que la empresa debe compensar la diferencia con capital. 
+<span style="color: navy">Así mismo el patrón de desarrollo de las reservas puede representar un problema de liquidez cuando se presenta una discrepancia temporal entre flujos de entrada y de salida en los casos que los flujos de salida son mayores, ya que la empresa debe compensar la diferencia con capital. 
 
-Por último hay que considerar que la cancelación anticipada de las pólizas representa una fuente de ingresos, debido a los cargos por rescate. 
+<span style="color: navy">Por último hay que considerar que la cancelación anticipada de las pólizas representa una fuente de ingresos, debido a los cargos por rescate. 
 
-Nos valdremos de la siguiente expresión para determinar la reserva al año t:
+<span style="color: navy">Nos valdremos de la siguiente expresión para determinar la reserva al año t:
 
-$_{t}V_x = A_{x+t} - P_x\ddot{a}_{x+t}$
+<span style="color: navy">$_{t}V_x = A_{x+t} - P_x\ddot{a}_{x+t}$
 
-Y utilizaremos nuevamente la solución vectorizada
+<span style="color: navy">Y utilizaremos nuevamente la solución vectorizada
 
 ```{r Vec700, exercise=TRUE, exercise.cap="Valores en Efectivo", exercise.setup="Vec499"}
    
@@ -1088,7 +1153,7 @@ Y utilizaremos nuevamente la solución vectorizada
    
 ```
 
-Con esto llegamos a la conclusión del segundo apartado y es tiempo de hacer un recuento de lo conceptos que se presentan en este capitulo
+<span style="color: navy">Con esto llegamos a la conclusión del segundo apartado y es tiempo de hacer un recuento de lo conceptos que se presentan en este capitulo
 
 ```{r Resumen03, exercise=TRUE,exercise.cap="Resumen",eval=TRUE}
 
@@ -1402,9 +1467,9 @@ Seccion "3. Innovations in insurance products" altamente recomendada
 <span style="color: navy">Su sintaxis es:
 
 <span style="color: navy">Para vectores: ifelse (condición, verdadero, falso)
-<span style="color: navy">Para variables unitarias: if (condición) verdadero else falso
+<span style="color: navy">Para variables unitarias: if (condición) {verdadero} else {falso}
 
-<span style="color: navy">Para variable unitarias se puede omitir la sección de falso
+<span style="color: navy">Para variable unitarias se puede omitir la sección de falso y por la tanto el comando "else"
 
 ```{r control01, exercise=TRUE, exercise.cap="Comandos de control de flujo"}
 
@@ -1465,13 +1530,13 @@ if(VecB[4]<=VecA[1])  # En este caso se debe indicar el paquete de instrucciones
 # Datos
 plazoseguro<-10;tasa<-.05;PmaNeta<-1000;Beneficios<-750
 
-# Ciclo -- for --
+# Ciclo  for 
 for (i in 1:plazoseguro) 
     {   # Inicia el ciclo
     if (i>1) {
               Excede[i]<-Excede[i-1]*(1+tasa)+(PmaNeta-Beneficios)*(1+tasa/2)
              } else
-       {Excede[i]<-(Excede-Beneficios)*(1+tasa/2)}
+             {Excede[i]<-(Excede-Beneficios)*(1+tasa/2)}
     }   # Termina el ciclo
 
 Excede   # Presenta en pantalla el resultado
@@ -1508,9 +1573,8 @@ sumaaseg<-sumaaseg<-rnorm(25,mean=200000,sd=40000) # rnorm random Normal, genera
 
 # Escribe un código en el que recorras los 3 tipos de riesgo y obtengas el total de suma asegurada y su media
   
-< < Tu Código > >
+<< Tu Código >>
   
-
 ```
 
 <span style="color: navy">Considerando el ejercicio de calculo de reservas, escribe un código en el establezcas un ciclo para iterar sobre el año póliza t
@@ -1521,11 +1585,11 @@ sumaaseg<-sumaaseg<-rnorm(25,mean=200000,sd=40000) # rnorm random Normal, genera
 
 # Determina el plazo de seguro 
   
- PlazoSeg<-______
+ PlazoSeg<- <<Tu Código>>
 
 # Establece la sintaxis de la función for  y su parametrización
  
-____ (t in ____) {
+<<Tu Código>> (t in <<Tu Código>>) {
    Vecqx<-TablaMx$qx[(Edad-11+t):89] 
    if (t<60) Veckpx<-cumprod(c(1,TablaMx$px[(Edad-11+t):(89-1)])) else    Veckpx<-1
    Vectasa<-cumprod(c(1,rep(1/(1+tasa),(89-Edad+11+1))) )  # Este vector tiene un componente mas
@@ -1534,10 +1598,10 @@ ____ (t in ____) {
    Rva[t] <- PriesgoNumerador - PrimaRiesgo*PriesgoDenominador
 }
 
-
 ```
 
 <span style="color: navy">Considera que la función **abs()** entrega el valor absoluto de un número,
+
 Revisa este código e identifica los errores de sintaxis:
 
          "if abs(a)=<epsilon 
@@ -1804,8 +1868,6 @@ PersisAnual<-c(1,.80,.90,.95,.97,.98,rep(.99,90)) # Cuantas pólizas continúan 
 paste('Valores presentes')
 format(ValPre,digits=2,big.mark=",")
 
-   
-        
 ```
 
 <span style="color: navy">Con los elementos de R que tenemos hasta ahora podemos calcular anualidades ciertas, anualidades contingentes, primas de seguro tanto de riesgo como de tarifa y determinar un cash flow
@@ -1928,24 +1990,16 @@ abline(h=0,col="red")
 
 <span style="color: brown">Inlcuir graficas de Inflación en México e historico del % de costo de operacion de la CNSF (financia AMIS)
 
-## Referencias
-
-Jan H. Holsboer 2000 "The Impact of Low Interest Rates on Insurers" The Geneva Papers on Risk and Insurance Vol. 25 No. 1 paginas 38-58
-
-Irina Fan, et al. 2020 "Lower for even longer: what does the low interest rate economy mean for insurers?" Swiss Re Institute  Septiembre 2020
-
-
-
 ## <span style="color: navy">E-4: Funciones {data-progressive=TRUE}
 
 <span style="color: navy">Complementario a las funciones que R ya tiene integradas, nosotros como usuarios podemos desarrollar una nueva función; recordemos que una función es un conjunto de instrucciones, las cuales operan parámetros de entrada para producir un resultado concreto, de manera que, si una parte del código se repite más de una vez, entonces esta sección será un buen candidato para crear una función.
 
 <span style="color: navy">Entre las ventajas que tiene crear una función están:
 
-<span style="color: navy">- El código es más compacto y entendible.
-<span style="color: navy">- Reduce la posibilidad de errores de copiar y pegar el código.
-<span style="color: navy">- Facilita la actualización o modificación del código.
-<span style="color: navy">- Homologa el manejo de parámetros y resultados.
+- <span style="color: navy">El código es más compacto y entendible.
+- <span style="color: navy">Reduce la posibilidad de errores de copiar y pegar el código.
+- <span style="color: navy">Facilita la actualización o modificación del código.
+- <span style="color: navy">Homologa el manejo de parámetros y resultados.
 
 <span style="color: navy">Para declarar una función la sintaxis es:
 
@@ -1984,8 +2038,9 @@ a<-c(28,19,7,30,17,21)
 (Ev(a))
 
 # Nota los siguientes aspecto: 
-# - Si en la definición de la funcion, se declara un valor por omisión para un parámetro (en este ejemplo t=4) es factible omitir este parámetro de la llamada
-# - Una función puede entregar diferentes resultados dependiendo de los parametors
+# - Si en la definición de la funcion, se declara un valor por omisión para un parámetro (en este ejemplo t=4) 
+# es factible omitir este parámetro de la llamada
+# - Una función puede entregar diferentes resultados dependiendo de los parámetros 
 # - Es recomendable incluir una validación de que los datos son operables dentro del cuerpo de la función
 
 
@@ -2009,11 +2064,11 @@ IMC<-function(Peso,Alt){
 <span style="color: navy">Para el caso del mercado mexicano la tasa libre de riesgo esta determinada por la tasa que pagan los documentos gubernamentales, para los instrumentos en moneda nacional, tenemos:
 
 
-<span style="color: navy">Obs \ Plazo|1 año |3 años|5 años|10 años|20 años|30 años  
-<span style="color: navy">-----------|------|------|------|-------|-------|--------  
-<span style="color: navy">Sep 20     |4.45% |  4.56|  4.87| 5.68  |   6.66|  6.98%  
-<span style="color: navy">Nov 20     |4.32% |  4.55|  4.89| 5,98  |   6.95|  7.20%  
-<span style="color: navy">Dic 21 Pro |2.04% |  2,62|  3.38| 5.15  |   6.42|  6.74%  
+|Obs   Plazo  |1 año   |3 años   |5 años   |10 años  |20 años  |30 años   |  
+|-------------|--------|---------|---------|---------|---------|----------|
+|Sep 20       |4.45% |  4.56|  4.87| 5.68  |   6.66|  6.98% | 
+|Nov 20       |4.32% |  4.55|  4.89| 5,98  |   6.95|  7.20% | 
+|Dic 21 Pro   |2.04% |  2,62|  3.38| 5.15  |   6.42|  6.74% | 
 <span style="color: navy"><font size ="1"> Fuente:www.worldgovermentbonds.com</font>  
 
 <span style="color: navy">Las tasas libres de riesgo, se utilizan en los modelos de seguros para descontar los flujos de la empresa y determinar la rentabilidad del negocio, entre otras cosas.
@@ -2021,6 +2076,8 @@ IMC<-function(Peso,Alt){
 <span style="color: navy">El problema que se presenta es que la curva de tasas tiene ciertos nodos, en este caso 1,3 5, 10, 20 y 30 años, mientras que el portafolio tiene vencimientos todos los años.
 
 <span style="color: navy">Para ello tomaremos los nodos disponibles y proyectaremos las tasas de los plazos intermedios, esto lo haremos con una interpolación lineal.
+
+
 
 ```{r Fun01, exercise=TRUE, exercise.cap="Creación de Funciones de Usuario" }
 
@@ -2783,4 +2840,15 @@ Rango<-c(40,45,50)
 
 (RangoP<-unlist(lapply(Rango,PR,Tabla=3,Tasa=.04,PlazoSeg=20,PlazoPag=20,                         Dotal=1,Fsel=0,Persis=0,Gfij=1500,Gvar=.04,Sap=2000000,Comis=1)))
 ```
+
+## Referencias
+
+Jan H. Holsboer 2000 "The Impact of Low Interest Rates on Insurers" The Geneva Papers on Risk and Insurance Vol. 25 No. 1 paginas 38-58
+
+Irina Fan, et al. 2020 "Lower for even longer: what does the low interest rate economy mean for insurers?" Swiss Re Institute  Septiembre 2020
+
+C.D. Daykin 1984 "Practical Risk Theory for Acturies" Chapman & Hall
+
+<a href = "https://forms.office.com/Pages/ResponsePage.aspx?id=UJtdQLAA1USJ3jk9U1VhOWgA-JUoeRNHr_OuvblySZ5UQUJONVFWTUMzUTg0SE5SM0hNTENCNVJYUy4u" target="_blank">Danos la oportunidad de mejorar, agradecemos tu retroalimentación</a>
+
 
