@@ -1726,15 +1726,14 @@ paste("Numero de veces en el ciclo",i)
    
 <span style="color: navy">Variables de entrada
 
-    <span style="color: navy">- Edad del solicitante, determina el patron de reclamaciones y pago de primas
-    <span style="color: navy">- Sexo del solicitante, en caso de que se realicen descuentos en la edad de calculo
-    - <span style="color: navy">Tipo de plan, Temporal, Ordinario de Vida, Dotal
-    - <span style="color: navy">Plazo de seguro, 
-    - <span style="color: navy">Plazo e pago
-    - <span style="color: navy">Suma Asegurada
-    - <span style="color: navy">Esquema de gastos de adquisición
-    - <span style="color: navy">Esquema de gastos de administración
-    - <span style="color: navy">Patrón de persistencia
+  - <span style="color: navy">Edad del solicitante, determina el patron de reclamaciones y pago de primas   - <span style="color: navy">Sexo del solicitante, en caso de que se realicen descuentos en la edad de calculo  
+  - <span style="color: navy">Tipo de plan, Temporal, Ordinario de Vida, Dotal  
+  - <span style="color: navy">Plazo de seguro, 
+  - <span style="color: navy">Plazo e pago
+  - <span style="color: navy">Suma Asegurada
+  - <span style="color: navy">Esquema de gastos de adquisición
+  - <span style="color: navy">Esquema de gastos de administración
+  - <span style="color: navy">Patrón de persistencia
 
 ```{r varAssetShare,exercie.setup="Vec299"}
 TablaMx <- read_csv(x)
@@ -1953,7 +1952,7 @@ abline(h=0,col="red")
 <span style="color: brown">Complementario a los elementos técnicos necesarios para cubrir las necesidades del cliente, ya sea de protección o de ahorro, la prima a cargo de éste debe incluir un margen suficiente para solventar el coste de los servicios que requiere la póliza a lo largo de su vigencia; hasta aquí tenemos dos plazos clave, el primero **el plazo de seguro**, que es el periodo de vigencia de la póliza y, el segundo, **el plazo de pago de primas**, que puede ser igual o menor al plazo de seguro, cuando es menor nótese que la prima debe contemplar el margen suficiente para dotar de servicios a la póliza en el periodo donde ya no hay más ingresos de prima. 
 
 
-<details> <summary>Servicios que requiere una póliza</summary>
+<details> <summary><span style="color: brown">Servicios que requiere una póliza</summary>
 
 
 |Con contacto con el cliente| Sin Contacto con el cliente    |
@@ -1974,13 +1973,13 @@ abline(h=0,col="red")
 
 <span style="color: brown">Entre ellos podemos incluir costos por atraer y distribuir la póliza, gastos de adquisición, gastos de administración, costo de reaseguro, costo de capital, supuestos de persistencia y valores de rescate implícitos en los contratos, esto es: 
 
-**<span style="color:brown">Gastos de Adquisición:</span>** Incluyen costos incurridos por suscribir un nuevo contrato, vamos a clasificarlos: 
+**<span style="color:brown">Gastos de Adquisición:** Incluyen costos incurridos por suscribir un nuevo contrato, vamos a clasificarlos: 
 
  <span style="color: brown">**1. Los que son necesarios para evaluar el riesgo y emitir la póliza:** Son los costos por el proceso de contratación, pruebas médicas, investigación en caso de sumas aseguradas altas, emisión y entrega de la póliza. 
 
  <span style="color: brown">**2. Los que se derivan de las operaciones para hacer llegar el producto al mercado:** Estos dependen del esquema de distribución/comercialización de la compañía, las variantes son muchas y van desde esquemas directos en los que la compañía promueve con sus propios recursos la contratación, hasta los indirectos como los que se realizan en las áreas de seguros de los bancos, cuya promoción y contratación se realiza en la sucursal bancaria y con los recursos del banco, así como los esquemas de promoción y de agencias, en los que asesores de una red especializada promueven, orientan y acompañan en los procesos de contratación.
 
-<span style="color: brown">**Gastos de Administración:</span>** Son los costos de actividades orientadas a cumplir con los beneficios del contrato; incluyen todas las áreas administrativas, técnicas, operativas y de servicio, funciones como cobranzas, sistemas, desarrollo de productos, cálculo de reservas, auditoría, recursos humanos, gestión de reaseguro.
+<span style="color: brown">**Gastos de Administración:** Son los costos de actividades orientadas a cumplir con los beneficios del contrato; incluyen todas las áreas administrativas, técnicas, operativas y de servicio, funciones como cobranzas, sistemas, desarrollo de productos, cálculo de reservas, auditoría, recursos humanos, gestión de reaseguro.
 
 <span style="color: brown">Esta clasificación es relevante ya que algunos de estos gastos están ligados al monto de la suma asegurada / capital en riesgo y su tratamiento en los modelos de Pricing es diferente, asimismo es relevante el momento en el que se realizan los servicios, ya que en los modelos los costos asociados se provisionan y nivelan.
 
