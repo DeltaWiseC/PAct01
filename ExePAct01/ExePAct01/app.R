@@ -3,12 +3,13 @@ library(shinydashboard)
 library(DT)
 library(shinyjs)
 library(sodium)
+library(learnr)
+library(devtools)
 
 
 # Main login screen
 loginpage <- div(id = "loginpage", style = "width: 500px; max-width: 100%; margin: 0 auto; padding: 20px;",
                  wellPanel(
-                     tags$img(src="images/Delta.png",width="180px",height="120px"),
                      tags$h2("ACCESO", class = "text-center", style = "padding-top: 0;color:#333; font-weight:600;"),
                      textInput("userName", placeholder="Usuario", label = tagList(icon("user"), "Usuario")),
                      passwordInput("passwd", placeholder="Contraseña", label = tagList(icon("unlock-alt"), "Contraseña")),
@@ -20,23 +21,28 @@ loginpage <- div(id = "loginpage", style = "width: 500px; max-width: 100%; margi
                                  font-size: 18px; font-weight: 600;"),
                          shinyjs::hidden(
                              div(id = "nomatch",
-                                 tags$p("Uups! Usuario o contraseña incorrectos!",
+                                 tags$p("Uups! Usuario o contraseña incorrectos! o excedio la fecha de realización",
                                         style = "color: red; font-weight: 600;
                                             padding-top: 5px;font-size:16px;",
                                         class = "text-center"))),
-                         br(),
-                         br(),
-                         tags$code("Username: myuser  Password: mypass"),
-                         br(),
-                         tags$code("Username: myuser1  Password: mypass1")
+                         br()
+
                      ))
 )
-Usuarios<-read.csv("www/Usuarios01.csv",header = TRUE,stringsAsFactors = FALSE)
+Usuarios<-read.csv("PAct01/www/Usuarios01.csv",header = TRUE,stringsAsFactors = FALSE)
+Usuarios$Ultima <- as.Date(Usuarios$Ultima, "%d/%m/%Y")
+Usuarios$Inicia <- as.Date(Usuarios$Inicia, "%d/%m/%Y")
+Usuarios$Termina <- as.Date(Usuarios$Termina, "%d/%m/%Y")
+
+Hoy<-Sys.Date()
 
 credentials = data.frame(
     username_id = Usuarios$Usuario,
     passod   = sapply(Usuarios$Password,password_store),
     permission  = Usuarios$Permiso,
+    Inicia=Usuarios$Inicia,
+    Termina=Usuarios$Termina,
+    Ultima=Usuarios$Ultima,
     stringsAsFactors = F
 )
 
@@ -59,7 +65,10 @@ server <- function(input, output, session) {
                     Username <- isolate(input$userName)
                     Password <- isolate(input$passwd)
                     if(length(which(credentials$username_id==Username))==1) {
-                        pasmatch  <- credentials["passod"][which(credentials$username_id==Username),]
+                        if (credentials["Termina"][which(credentials$username_id==Username),]>=Hoy &
+                            credentials["Ultima"][which(credentials$username_id==Username),]<=Hoy) {
+                            pasmatch  <- credentials["passod"][which(credentials$username_id==Username),]} else{
+                            pasmatch  <- credentials["passod"][which(credentials$username_id=="Martin"),]}
                         pasverify <- password_verify(pasmatch, Password)
                         if(pasverify) {
                             USER$login <- TRUE
@@ -87,32 +96,55 @@ server <- function(input, output, session) {
 
     output$sidebarpanel <- renderUI({
         if (USER$login == TRUE ){
-            sidebarMenu(
-                menuItem("Practicas Actuariales", tabName = "dashboard", icon = icon("dashboard"))
-            )
+            if (credentials[,"permission"][which(credentials$username_id==input$userName)]=="participante") {
+                sidebarMenu(
+                    menuItem("Instalar", tabName = "Instala", icon = icon("dashboard")),
+                    menuItem("Ejecutar", tabName = "Ejecuta", icon = icon("th")),
+                    menuItem("Enviar Ejercicios", tabName = "Envia", icon = icon("th"))
+                )
+            }
+            else{
+                sidebarMenu(
+                    menuItem("Revisar Usuarios", tabName = "dashboard", icon = icon("dashboard")),
+                    uiOutput('Otro')
+                )
+
+            }
         }
     })
 
     output$body <- renderUI({
         if (USER$login == TRUE ) {
-            tabItem(tabName ="dashboard", class = "active",
-
+            if (credentials[,"permission"][which(credentials$username_id==input$userName)]=="participante") {
+                tabItems(
+                    if (sidebarMenu$input=="Instala") {
+                    tabItem(tabName ="Ejecuta", class = "active",
+                            fluidRow(
+                          h3("Espacio para enviar"))
+                    )} else if (sidebarMenu$input=="Ejecuta") {
+                    tabItem(tabName ="Instala", class = "active",
+                        fluidRow(
+ #                           library(learnr),
+                            h3("Instalando .. "))
+                        )} else if (sidebarMenu$input=="Envia") {
+                    tabItem(tabName ="Envia",
+                          install_github("DeltaWiseC/PAct01",quiet=TRUE,echo=FALSE),
+                            h3("This is second tab"))}
+                    )
+            }
+            else {
+                tabItem(
+                    tabName ="dashboard", class = "active",
                     fluidRow(
-                        tags$img(src="images/Delta.png",width="180px",height="120px"),
-                        box(
-                            p("Esta e una monserga")
                         )
-                    ))
+                    )
+            }
         }
         else {
             loginpage
         }
     })
 
-    output$results <-  DT::renderDataTable({
-        datatable(iris, options = list(autoWidth = TRUE,
-                                       searching = FALSE))
-    })
 
 }
 

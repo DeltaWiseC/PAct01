@@ -597,6 +597,21 @@ paste("Comparación logical del producto punto ", VecA%*%VecB == VecB%*%VecA)
   
 ```
 
+```{r duda4010, exercise.cap="Operación de Vectores "}
+question("Si A<- c(2,6,1,7,8,4) B<-c(5,3,4) C<- 7 cuales de las siguientes expresiones corresponden con el concepto: ",
+         answer("(A => B   Entrega un vector logico comparando las componentes de A con las de B",message="No corresponde, de hecho entrega un error el operador => no existe <br>"),
+         answer("(A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ",correct=TRUE,message="Correcto, el operador %/% representa la división entera, como B tienen menos componentes que A, los componentes de B se 'reutilizan´para completar la operación <br>"),
+         answer("(B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B",correct=TRUE,message="Correcto, el operador %*% producto punto multiplica los vectores componente a componente y suma estos productos <br>"),
+         answer("(A <- C  Compara cada componente de A con el valor de C",message="In correcto, de hecho esta expresión esta asignando el valor C a la variable A <br>"),
+         answer("(A %in% C  Es un error porque el vector A tiene mas componentes que el vector C",message="Incorrecto, esta expresión es valida y entrega un vector logico en el que establece si cada componente de A esta incluida en C <br>"),
+         
+         allow_retry = TRUE,
+         random_answer_order = TRUE
+         )
+
+```
+
+
 ###  <span style="color: navy">2.2 Operación con componentes de vectores
 
 <span style="color: navy">Es factible operar con componentes específicos de un vector, así como realizar búsquedas y comparaciones lógicas entre componentes. 
@@ -629,11 +644,11 @@ which(VecB==2) # Identifica las componentes del Vector B igual a 2
  
 ```{r duda05, exercise.cap="Comprensión"}
 question("Dado que A<-c(4,8,12,20) B<-c(3,,9,11,2) C<-c(1,0,-4,7) cuales de las siguientes expresiones son válidas, sin modificar el contenido de los vectores, marca todas las expresiones válidas ",
-         answer("D<-C[A<=B]",correct=TRUE,message="Regresa el componente de C en los que el componente de A es menor que el de B.   "),
-         answer("D<- A U B ", message="No hay ninguna instrucción o función en el comando el simbolo U es tomado como una variable.  "),
-         answer("D<-c(A,B,C)", correct=TRUE,  message="Concatena los tres conjuntos.  "),
-         answer("D<-C(A,B)",message="Los paréntesis redondos de utilizan para llamar una función, la función C no existe.  "),
-         answer("D<-C[A,B]",message="El vector C solo tiene una dimensión, el llamado [A,B] hace referencia a una matriz.  "),
+         answer("D<-C[A<=B]",correct=TRUE,message="Regresa el componente de C en los que el componente de A es menor que el de B.  <br> "),
+         answer("D<- A U B ", message="No hay ninguna instrucción o función en el comando el simbolo U es tomado como una variable.<br>"),
+         answer("D<-c(A,B,C)", correct=TRUE,  message="Concatena los tres conjuntos.<br>"),
+         answer("D<-C(A,B)",message="Los paréntesis redondos de utilizan para llamar una función, la función C no existe. <br>"),
+         answer("D<-C[A,B]",message="El vector C solo tiene una dimensión, el llamado [A,B] hace referencia a una matriz. <br>"),
          
          allow_retry = TRUE,
          random_answer_order = TRUE
@@ -643,11 +658,11 @@ question("Dado que A<-c(4,8,12,20) B<-c(3,,9,11,2) C<-c(1,0,-4,7) cuales de las 
 
 ```{r duda5010, exercise.cap="Comprensión"}
 question("Dados los vectores A<-c(a1,a2,a3,a4) D<-c(d1,d2) R<-c(r1,r2) cuales son expresiones validas para que el vector D opere como un factor de descuento a las primeras dos componentes de A y el vector R opere como un recargo a las ultimas componentes de A, al vector S se le asigna la solución, marca todas las expresiones válidas ",
-         answer("S<-A*c(1-D,1+R)",correct=TRUE,message="Integra un vector de descuentos y recargos de cuatro componentes y lo opera con A ....."),
-         answer("S<-A[1:2]*(1-D)+A[3:4]*(1+R)", message="Este comado genera un vector de 2 componenetes que suma las dos primera componentes de A descontadas por D y los ultimas dos recargadas por R....."),
-         answer("S<-c(A[1:2]*(1-D),A[3:4]*(1+R))",correct=TRUE, message="Determina las componentes de A con descuento y recargo y las combina en un vector de 4 componenetes....."),
-         answer("S <- c(A[1]*(1-C[1]),A[2]*(1-C[2]),A[3]*(1+R[1]),A[4]*(1+R[2]))", correct=TRUE,  message="Cada componente de A se afecta por el descuento/recargo correspondiente....."),
-         answer("S<-c(A[1:2]*D),A[3:4]*R))",message="No determina los factores de descuento / recargo....."),
+         answer("S<-A*c(1-D,1+R)",correct=TRUE,message="Integra un vector de descuentos y recargos de cuatro componentes y lo opera con A .....<br>"),
+         answer("S<-A[1:2]*(1-D)+A[3:4]*(1+R)", message="Este comado genera un vector de 2 componenetes que suma las dos primera componentes de A descontadas por D y los ultimas dos recargadas por R.....<br>"),
+         answer("S<-c(A[1:2]*(1-D),A[3:4]*(1+R))",correct=TRUE, message="Determina las componentes de A con descuento y recargo y las combina en un vector de 4 componenetes.....<br>"),
+         answer("S <- c(A[1]*(1-C[1]),A[2]*(1-C[2]),A[3]*(1+R[1]),A[4]*(1+R[2]))", correct=TRUE,  message="Cada componente de A se afecta por el descuento/recargo correspondiente.....<br>"),
+         answer("S<-c(A[1:2]*D),A[3:4]*R))",message="No determina los factores de descuento / recargo.....<br>"),
          allow_retry = TRUE,
          random_answer_order = TRUE
          )
@@ -1620,12 +1635,12 @@ Revisa este código e identifica los errores de sintaxis:
 
 ```{r duda10, exercise.cap="Comprensión"}
 question("Seleccione todos los errores de sintaxis:",
-         answer("La condición de if debe indicarse entre paréntesis",correct=TRUE, message="Bien, la sintaxis es if (cond) {} else {}  "),
-         answer("El operador lógico de igualdad es incorrecto",correct=TRUE, message="EL operador correcto es ==  "),
-          answer("La expresión !condicion es incorrecta",message="EL operador ! es negación"),
-         answer("El operador logico de menor o igual es incorrecto",correct=TRUE, message="EL operador correcto es <=  "),
-         answer("La expresión false despues de else debe indicarse entre corchetes", message="No necesariamente, si es una expresion unica puede ir sin corchetes "),
-         answer("No es factible cambiar el valor de epsilon porque forma parte de la condicion", message="La evaluación de la condición se realiza con el valor de las variables en ese punto del algoritmo, posteriormente puede modificarse cualquier variable"),
+         answer("La condición de if debe indicarse entre paréntesis",correct=TRUE, message="Bien, la sintaxis es if (cond) {} else {}  <br>"),
+         answer("El operador lógico de igualdad es incorrecto",correct=TRUE, message="EL operador correcto es ==  <br>"),
+          answer("La expresión !condicion es incorrecta",message="EL operador ! es negación<br>"),
+         answer("El operador logico de menor o igual es incorrecto<br>",correct=TRUE, message="EL operador correcto es <=  "),
+         answer("La expresión false despues de else debe indicarse entre corchetes", message="No necesariamente, si es una expresion unica puede ir sin corchetes<br> "),
+         answer("No es factible cambiar el valor de epsilon porque forma parte de la condicion", message="La evaluación de la condición se realiza con el valor de las variables en ese punto del algoritmo, posteriormente puede modificarse cualquier variable<br>"),
          allow_retry = TRUE,
          random_answer_order = TRUE
          )
@@ -1991,23 +2006,7 @@ abline(h=0,col="red")
 
 ## <span style="color: navy">E-4: Funciones {data-progressive=TRUE}
 
-<span style="color: navy">Complementario a las funciones que R ya tiene integradas, nosotros como usuarios podemos desarrollar una nueva función; recordemos que una función es un conjunto de instrucciones, las cuales operan parámetros de entrada para producir un resultado concreto, de manera que, si una parte del código se repite más de una vez, entonces esta sección será un buen candidato para crear una función.
-
-<span style="color: navy">Entre las ventajas que tiene crear una función están:
-
-- <span style="color: navy">El código es más compacto y entendible.
-- <span style="color: navy">Reduce la posibilidad de errores de copiar y pegar el código.
-- <span style="color: navy">Facilita la actualización o modificación del código.
-- <span style="color: navy">Homologa el manejo de parámetros y resultados.
-
-<span style="color: navy">Para declarar una función la sintaxis es:
-
-<span style="color:navy">*NombreFunción*<-function(*Argumentos*){*Procedimiento -- entregable*}
-
-<span style="color: navy">- **NombreFuncion**: Identificador del objeto creado en R con el que se llama el procedimiento
-<span style="color: navy">- **Argumentos**: Parámetros de entrada a considerar en el procedimiento   
-<span style="color: navy">- **Procedimiento**: Algoritmo con el que opera/modifica las variables de entrada y propias de la función para producir el resultado entregable
-<span style="color: navy">- **Entregable**: Variables de respuesta que produce el algoritmo
+<span style="color: navy">En esta sección desarrollaremos funciones definidas por nosotros, esto con el objeto de aprovechar el codigo que hemos desarrollado y aplicarlo con otros parametros, con ello vamos a ahorrar mucho tiempo en la codificación y evitaremos posibles errores al reescribir secciones de codigo.
 
 <span style="color: navy">Veamos nuestro primer ejemplo:
 
@@ -2252,9 +2251,9 @@ PersisAnual<-c(1,.80,.90,.95,.97,.98,rep(.99,90))
 question("Cuales son las estrategias operativas que se reflejan en el modelo de ruina ",
          answer("Realizar incrementos de capital ",correct=TRUE),
          answer("Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", correct=TRUE),
-         answer("Modificar la política de reaseguro", message="Si bien influye en el resultado del ejercicio no esta considerada en el modelo "),
-         answer("Modificar la política comercial, enfoque a nichos de SA mas baja", message="Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros" ),
-         answer("Modificar la política de suscripción, evitar riesgos subnormales ", correct=TRUE, message="Si tiene efecto sobre la desviación estándar de los siniestros"),
+         answer("Modificar la política de reaseguro", message="- Si bien influye en el resultado del ejercicio no esta considerada en el modelo <br>"),
+         answer("Modificar la política comercial, enfoque a nichos de SA mas baja", message="- Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros <br>" ),
+         answer("Modificar la política de suscripción, evitar riesgos subnormales ", correct=TRUE, message="- Si tiene efecto sobre la desviación estándar de los siniestros <br>"),
          
          allow_retry = TRUE,
          random_answer_order = TRUE
