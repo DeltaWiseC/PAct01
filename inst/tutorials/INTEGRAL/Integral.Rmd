@@ -13,6 +13,7 @@ runtime: shiny_prerendered
 
 <style> body {text-align: justify} </style>
 
+
 ```{r setup, include=FALSE}
 library(learnr)
 library(gradethis)
@@ -486,9 +487,10 @@ Condicion<- 25<=IMC & IMC <30
 
 <details> <summary>Evolucion de la Mortalidad Mexicana      Click para expandir/contraer!</summary>
 
-![ ](images/EvolMort.png)
+<img src="images/EvolMort.png" width="800"/>
 
-![ ](images/ComparativoMortalidad.png)
+
+<img src="images/ComparativoMortalidad.png" width="800"/>
 
 </details>
 
@@ -599,14 +601,14 @@ paste("Comparación logical del producto punto ", VecA%*%VecB == VecB%*%VecA)
 
 ```{r duda4010, exercise.cap="Operación de Vectores "}
 question("Si A<- c(2,6,1,7,8,4) B<-c(5,3,4) C<- 7 cuales de las siguientes expresiones corresponden con el concepto: ",
-         answer("(A => B   Entrega un vector logico comparando las componentes de A con las de B",message="No corresponde, de hecho entrega un error el operador => no existe <br>"),
-         answer("(A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ",correct=TRUE,message="Correcto, el operador %/% representa la división entera, como B tienen menos componentes que A, los componentes de B se 'reutilizan´para completar la operación <br>"),
-         answer("(B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B",correct=TRUE,message="Correcto, el operador %*% producto punto multiplica los vectores componente a componente y suma estos productos <br>"),
-         answer("(A <- C  Compara cada componente de A con el valor de C",message="In correcto, de hecho esta expresión esta asignando el valor C a la variable A <br>"),
-         answer("(A %in% C  Es un error porque el vector A tiene mas componentes que el vector C",message="Incorrecto, esta expresión es valida y entrega un vector logico en el que establece si cada componente de A esta incluida en C <br>"),
+         answer("i)  (A => B   Entrega un vector logico comparando las componentes de A con las de B",message="i)  No corresponde, de hecho entrega un error el operador => no existe <br>"),
+         answer("ii)  (A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ",correct=TRUE,message="ii)  Correcto, el operador %/% representa la división entera, como B tienen menos componentes que A, los componentes de B se 'reutilizan´para completar la operación <br>"),
+         answer("iii)  (B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B",correct=TRUE,message="iii)  Correcto, el operador %*% producto punto multiplica los vectores componente a componente y suma estos productos <br>"),
+         answer("iv)  (A <- C  Compara cada componente de A con el valor de C",message="iv)  In correcto, de hecho esta expresión esta asignando el valor C a la variable A <br>"),
+         answer("v)  (A %in% C  Es un error porque el vector A tiene mas componentes que el vector C",message="v)  Incorrecto, esta expresión es valida y entrega un vector logico en el que establece si cada componente de A esta incluida en C <br>"),
          
          allow_retry = TRUE,
-         random_answer_order = TRUE
+         random_answer_order = FALSE
          )
 
 ```
@@ -644,27 +646,28 @@ which(VecB==2) # Identifica las componentes del Vector B igual a 2
  
 ```{r duda05, exercise.cap="Comprensión"}
 question("Dado que A<-c(4,8,12,20) B<-c(3,,9,11,2) C<-c(1,0,-4,7) cuales de las siguientes expresiones son válidas, sin modificar el contenido de los vectores, marca todas las expresiones válidas ",
-         answer("D<-C[A<=B]",correct=TRUE,message="Regresa el componente de C en los que el componente de A es menor que el de B.  <br> "),
-         answer("D<- A U B ", message="No hay ninguna instrucción o función en el comando el simbolo U es tomado como una variable.<br>"),
-         answer("D<-c(A,B,C)", correct=TRUE,  message="Concatena los tres conjuntos.<br>"),
-         answer("D<-C(A,B)",message="Los paréntesis redondos de utilizan para llamar una función, la función C no existe. <br>"),
-         answer("D<-C[A,B]",message="El vector C solo tiene una dimensión, el llamado [A,B] hace referencia a una matriz. <br>"),
+         answer("i)  D<-C[A<=B]",correct=TRUE,message="i) Regresa el componente de C en los que el componente de A es menor que el de B.  <br> "),
+         answer("ii)  D<- A U B ", message="ii)  No hay ninguna instrucción o función en el comando el simbolo U es tomado como una variable.<br>"),
+         answer("iii)  D<-c(A,B,C)", correct=TRUE,  message="iii)  Combina los tres conjuntos.<br>"),
+         answer("iv)  D<-C(A,B)",message="iv)  Los paréntesis redondos de utilizan para llamar una función, la función C no existe. <br>"),
+         answer("v)  D<-C[A,B]",message="v)  El vector C solo tiene una dimensión, el llamado [A,B] hace referencia a una matriz. <br>"),
          
          allow_retry = TRUE,
-         random_answer_order = TRUE
+         random_answer_order = FALSE
          )
 
 ```
 
+
 ```{r duda5010, exercise.cap="Comprensión"}
 question("Dados los vectores A<-c(a1,a2,a3,a4) D<-c(d1,d2) R<-c(r1,r2) cuales son expresiones validas para que el vector D opere como un factor de descuento a las primeras dos componentes de A y el vector R opere como un recargo a las ultimas componentes de A, al vector S se le asigna la solución, marca todas las expresiones válidas ",
-         answer("S<-A*c(1-D,1+R)",correct=TRUE,message="Integra un vector de descuentos y recargos de cuatro componentes y lo opera con A .....<br>"),
-         answer("S<-A[1:2]*(1-D)+A[3:4]*(1+R)", message="Este comado genera un vector de 2 componenetes que suma las dos primera componentes de A descontadas por D y los ultimas dos recargadas por R.....<br>"),
-         answer("S<-c(A[1:2]*(1-D),A[3:4]*(1+R))",correct=TRUE, message="Determina las componentes de A con descuento y recargo y las combina en un vector de 4 componenetes.....<br>"),
-         answer("S <- c(A[1]*(1-C[1]),A[2]*(1-C[2]),A[3]*(1+R[1]),A[4]*(1+R[2]))", correct=TRUE,  message="Cada componente de A se afecta por el descuento/recargo correspondiente.....<br>"),
-         answer("S<-c(A[1:2]*D),A[3:4]*R))",message="No determina los factores de descuento / recargo.....<br>"),
+         answer("i) S<-A*c(1-D,1+R)",correct=TRUE,message="i) Integra un vector de descuentos y recargos de cuatro componentes y lo opera con A .....<br>"),
+         answer("ii) S<-A[1:2]*(1-D)+A[3:4]*(1+R)", message="ii) Este comando genera un vector de 2 componenetes que suma las dos primera componentes de A descontadas por D y los ultimas dos recargadas por R.....<br>"),
+         answer("iii) S<-c(A[1:2]*(1-D),A[3:4]*(1+R))",correct=TRUE, message="iii) Determina las componentes de A con descuento y recargo y las combina en un vector de 4 componenetes.....<br>"),
+         answer("iv) S <- c(A[1]*(1-C[1]),A[2]*(1-C[2]),A[3]*(1+R[1]),A[4]*(1+R[2]))", correct=TRUE,  message="iv) Cada componente de A se afecta por el descuento/recargo correspondiente.....<br>"),
+         answer("v) S<-c(A[1:2]*D),A[3:4]*R))",message="v) No determina los factores de descuento / recargo.....<br>"),
          allow_retry = TRUE,
-         random_answer_order = TRUE
+         random_answer_order = FALSE
          )
 
 ```
@@ -779,7 +782,7 @@ Regresa la estructura del objeto TablaMx
 </div>
 
 
-El objeto TablaMx  esta compuesto
+<span style="color: navy">El objeto TablaMx  esta compuesto
 
 
 <style type="text/css">
@@ -789,11 +792,11 @@ El objeto TablaMx  esta compuesto
 }
 </style>
 
-<span style="color: navy">|Renglón/Columna|Edad|qx|
-<span style="color: navy">|---|:---:|---:|
-<span style="color: navy">|1|12|0.000396|
-<span style="color: navy">|...|...|...|
-<span style="color: navy">| 89|100|1.000000|
+|Renglón/Columna|Edad|qx|
+|---|:---:|---:|
+|1|12|0.000396|
+|...|...|...|
+| 89|100|1.000000|
 
 <span style="color: navy">Notesé que la información correspondiente a la edad 12 esta incluida en el renglón 1 y la de edad 100 en el renglón 89.
 
@@ -1285,17 +1288,16 @@ TablaMx[Conjunto[which(Conjunto%%3==0)]-11,]
 
 <details> <summary><span style="color: brown">En México</summary>
 
-![ ](images/NalTendB.png)
+<img src="images/NalTendB.png" width="800"/>
 
-![ ](images/NalTendU.png)
+<img src="images/NalTendU.png" width="800"/>
 
-
-https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/insurance/insurance-pdfs/ey-nextwave-insurance-life-retirement.pdf
 </details>
 
 <details> <summary><span style="color: brown">En el mundo</summary>
 
-![ ](images/InterTendencia.png)
+<img src="images/InterTendencia.png" width="800"/>
+
 </details>
 
 
@@ -1635,14 +1637,14 @@ Revisa este código e identifica los errores de sintaxis:
 
 ```{r duda10, exercise.cap="Comprensión"}
 question("Seleccione todos los errores de sintaxis:",
-         answer("La condición de if debe indicarse entre paréntesis",correct=TRUE, message="Bien, la sintaxis es if (cond) {} else {}  <br>"),
-         answer("El operador lógico de igualdad es incorrecto",correct=TRUE, message="EL operador correcto es ==  <br>"),
-          answer("La expresión !condicion es incorrecta",message="EL operador ! es negación<br>"),
-         answer("El operador logico de menor o igual es incorrecto<br>",correct=TRUE, message="EL operador correcto es <=  "),
-         answer("La expresión false despues de else debe indicarse entre corchetes", message="No necesariamente, si es una expresion unica puede ir sin corchetes<br> "),
-         answer("No es factible cambiar el valor de epsilon porque forma parte de la condicion", message="La evaluación de la condición se realiza con el valor de las variables en ese punto del algoritmo, posteriormente puede modificarse cualquier variable<br>"),
+         answer("i)   La condición de if debe indicarse entre paréntesis",correct=TRUE, message="i)   Bien, la sintaxis es if (cond) {} else {}  <br>"),
+         answer("ii)  El operador lógico de igualdad es incorrecto",correct=TRUE, message="ii)  EL operador correcto es ==  <br>"),
+          answer("iii) La expresión !condicion es incorrecta",message="iii) EL operador ! es negación<br>"),
+         answer("iv) El operador logico de menor o igual es incorrecto<br>",correct=TRUE, message="iv) EL operador correcto es <=  "),
+         answer("v)   La expresión false despues de else debe indicarse entre corchetes", message="v)  No necesariamente, si es una expresion unica puede ir sin corchetes<br> "),
+         answer("vi) No es factible cambiar el valor de epsilon porque forma parte de la condicion", message="vi) La evaluación de la condición se realiza con el valor de las variables en ese punto del algoritmo, posteriormente puede modificarse cualquier variable<br>"),
          allow_retry = TRUE,
-         random_answer_order = TRUE
+         random_answer_order = FALSE
          )
 ```
 
@@ -1686,14 +1688,14 @@ abline(h=0,col="red")
 
 ```{r duda11, exercise.cap="Comprensión"}
 question("Cuales son las estrategias operativas que se reflejan en el modelo de ruina ",
-         answer("Realizar incrementos de capital ",correct=TRUE),
-         answer("Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", correct=TRUE),
-         answer("Modificar la política de reaseguro", message="Si bien influye en el resultado del ejercicio no esta considerada en el modelo "),
-         answer("Modificar la política comercial, enfoque a nichos de SA mas baja", message="Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros" ),
-         answer("Modificar la política de suscripción, evitar riesgos subnormales ", correct=TRUE, message="Si tiene efecto sobre la desviación estándar de los siniestros"),
+         answer("i)   Realizar incrementos de capital ",correct=TRUE),
+         answer("ii)  Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", correct=TRUE),
+         answer("iii) Modificar la política de reaseguro", message="iii) Si bien influye en el resultado del ejercicio no esta considerada en el modelo "),
+         answer("iv)  Modificar la política comercial, enfoque a nichos de SA mas baja", message="iv)  Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros" ),
+         answer("v)   Modificar la política de suscripción, evitar riesgos subnormales ", correct=TRUE, message="v)   Si tiene efecto sobre la desviación estándar de los siniestros"),
          
          allow_retry = TRUE,
-         random_answer_order = TRUE
+         random_answer_order = FALSE
          )
 
 ```
@@ -2249,14 +2251,14 @@ PersisAnual<-c(1,.80,.90,.95,.97,.98,rep(.99,90))
 
 ```{r duda22, exercise.cap="Comprensión"}
 question("Cuales son las estrategias operativas que se reflejan en el modelo de ruina ",
-         answer("Realizar incrementos de capital ",correct=TRUE),
-         answer("Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", correct=TRUE),
-         answer("Modificar la política de reaseguro", message="- Si bien influye en el resultado del ejercicio no esta considerada en el modelo <br>"),
-         answer("Modificar la política comercial, enfoque a nichos de SA mas baja", message="- Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros <br>" ),
-         answer("Modificar la política de suscripción, evitar riesgos subnormales ", correct=TRUE, message="- Si tiene efecto sobre la desviación estándar de los siniestros <br>"),
+         answer("i)    Realizar incrementos de capital ",correct=TRUE),
+         answer("ii)   Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", correct=TRUE),
+         answer("iii)  Modificar la política de reaseguro", message="iii) Si bien influye en el resultado del ejercicio no esta considerada en el modelo <br>"),
+         answer("iv)   Modificar la política comercial, enfoque a nichos de SA mas baja", message="iv)   Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros <br>" ),
+         answer("v)    Modificar la política de suscripción, evitar riesgos subnormales ", correct=TRUE, message="v)    Si tiene efecto sobre la desviación estándar de los siniestros <br>"),
          
          allow_retry = TRUE,
-         random_answer_order = TRUE
+         random_answer_order = FALSE
          )
 
 ```
@@ -2640,13 +2642,13 @@ CF<-function(Edad,Tabla,Tasa,PlazoSeg,PlazoPag=0,Dotal=0,Fsel=0,Persis=0,Gvar,Gf
 <span style="color: brown">A lo largo de los años y administraciones, la compañia de Seguros FENIX ha consolidado un portafolio de alrededor de 100 mil polizas de vida individual, caracterizado por cuatro bloques de negocio
 
 <span style="color: brown">
+
 | Bloque  | Años de Promoción  | Polizas   | Suma Asegurada| Reserva  |
 |:--------|-------------------:|----------:|--------------:|---------:|
 |Gen-X    |  1985-2004         |  17931    |       5384    |          |  
 |Banca    |  2000-2013         |  27192    |       2717    |          |
 |Masivo   |  2008-2015         |  49370    |       1816    |          |
-|Gen-M    |  2013-A la fecha   |   5681    |       3413    |          |
-|---------|--------------------|-----------|---------------|----------|
+|Gen-M    |  2013-A la fecha   |   5681    |       3413    |          
 
 
 #### <span style="color: chocolate">Gen X</span>  

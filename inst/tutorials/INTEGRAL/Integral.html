@@ -566,8 +566,8 @@ CARACTERÍSTICAS DE TABLAS DE MORTALIDAD DEL MERCADO MEXICANO Click para expandi
 <summary>
 Evolucion de la Mortalidad Mexicana Click para expandir/contraer!
 </summary>
-<p><img src="images/EvolMort.png" /></p>
-<p><img src="images/ComparativoMortalidad.png" /></p>
+<p><img src="images/EvolMort.png" width="800"/></p>
+<p><img src="images/ComparativoMortalidad.png" width="800"/></p>
 </details>
 <p><a href = "https://rde.inegi.org.mx/rde_14/doctos/rde_14_art1.pdf" target="_blank">Inferencia bayesiana y tablas de mortalidad en México</a></p>
 <p><a href = "http://132.248.9.195/ptd2018/febrero/0771009/0771009.pdf" target="_blank">TABLAS DE MORTALIDAD UTILIZADAS EN MÉXICO Y SUS ASPECTOS RELEVANTES DURANTE EL PERIODO 1843 A 2005</a></p>
@@ -799,14 +799,39 @@ TablaMx$Edad o TablaMx[ ,1] para Edad y<br />
 TablaMx$qx o TablaMx[ ,2] para qx<br />
 Para acceder a la información por renglón la sintaxis es TablaMx[1, ]</p>
 </div>
-<p>El objeto TablaMx esta compuesto</p>
+<p><span style="color: navy">El objeto TablaMx esta compuesto</p>
 <style type="text/css">
 .table {
 
     width: 40%;
 }
 </style>
-<p><span style="color: navy">|Renglón/Columna|Edad|qx| <span style="color: navy">|—|:—:|—:| <span style="color: navy">|1|12|0.000396| <span style="color: navy">|…|…|…| <span style="color: navy">| 89|100|1.000000|</p>
+<table>
+<thead>
+<tr class="header">
+<th>Renglón/Columna</th>
+<th align="center">Edad</th>
+<th align="right">qx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="center">12</td>
+<td align="right">0.000396</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td align="center">…</td>
+<td align="right">…</td>
+</tr>
+<tr class="odd">
+<td>89</td>
+<td align="center">100</td>
+<td align="right">1.000000</td>
+</tr>
+</tbody>
+</table>
 <p><span style="color: navy">Notesé que la información correspondiente a la edad 12 esta incluida en el renglón 1 y la de edad 100 en el renglón 89.</p>
 <p><span style="color: navy">Vamos a practicar con esta tabla las siguientes operaciones:</p>
 <ul>
@@ -1212,15 +1237,14 @@ TablaMx[Conjunto[which(Conjunto%%3==0)]-11,]</code></pre>
 <summary>
 <span style="color: brown">En México
 </summary>
-<p><img src="images/NalTendB.png" /></p>
-<p><img src="images/NalTendU.png" /></p>
-<a href="https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/insurance/insurance-pdfs/ey-nextwave-insurance-life-retirement.pdf" class="uri">https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/insurance/insurance-pdfs/ey-nextwave-insurance-life-retirement.pdf</a>
+<p><img src="images/NalTendB.png" width="800"/></p>
+<p><img src="images/NalTendU.png" width="800"/></p>
 </details>
 <details>
 <summary>
 <span style="color: brown">En el mundo
 </summary>
-<img src="images/InterTendencia.png" />
+<p><img src="images/InterTendencia.png" width="800"/></p>
 </details>
 </div>
 <div id="section-efectos-en-el-negocio-de-seguro-de-vida" class="section level3">
@@ -1837,18 +1861,7 @@ abline(h=0,col=&quot;red&quot;)
 </div>
 <div id="section-e-4-funciones" class="section level2" data-progressive="TRUE">
 <h2 data-progressive="TRUE"><span style="color: navy">E-4: Funciones</h2>
-<p><span style="color: navy">Complementario a las funciones que R ya tiene integradas, nosotros como usuarios podemos desarrollar una nueva función; recordemos que una función es un conjunto de instrucciones, las cuales operan parámetros de entrada para producir un resultado concreto, de manera que, si una parte del código se repite más de una vez, entonces esta sección será un buen candidato para crear una función.</p>
-<p><span style="color: navy">Entre las ventajas que tiene crear una función están:</p>
-<ul>
-<li><span style="color: navy">El código es más compacto y entendible.</li>
-<li><span style="color: navy">Reduce la posibilidad de errores de copiar y pegar el código.</li>
-<li><span style="color: navy">Facilita la actualización o modificación del código.</li>
-<li><span style="color: navy">Homologa el manejo de parámetros y resultados.</li>
-</ul>
-<p><span style="color: navy">Para declarar una función la sintaxis es:</p>
-<p><span style="color:navy"><em>NombreFunción</em>&lt;-function(<em>Argumentos</em>){<em>Procedimiento – entregable</em>}</p>
-<p><span style="color: navy">- <strong>NombreFuncion</strong>: Identificador del objeto creado en R con el que se llama el procedimiento <span style="color: navy">- <strong>Argumentos</strong>: Parámetros de entrada a considerar en el procedimiento<br />
-<span style="color: navy">- <strong>Procedimiento</strong>: Algoritmo con el que opera/modifica las variables de entrada y propias de la función para producir el resultado entregable <span style="color: navy">- <strong>Entregable</strong>: Variables de respuesta que produce el algoritmo</p>
+<p><span style="color: navy">En esta sección desarrollaremos funciones definidas por nosotros, esto con el objeto de aprovechar el codigo que hemos desarrollado y aplicarlo con otros parametros, con ello vamos a ahorrar mucho tiempo en la codificación y evitaremos posibles errores al reescribir secciones de codigo.</p>
 <p><span style="color: navy">Veamos nuestro primer ejemplo:</p>
 <div class="tutorial-exercise" data-label="Fun11" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># El nombre de la función es &quot;Ev&quot;
@@ -2157,8 +2170,55 @@ PersisAnual&lt;-c(1,.80,.90,.95,.97,.98,rep(.99,90))
 <div id="section-la-cartera" class="section level3">
 <h3><span style="color: brown">La Cartera</h3>
 <p><span style="color: brown">A lo largo de los años y administraciones, la compañia de Seguros FENIX ha consolidado un portafolio de alrededor de 100 mil polizas de vida individual, caracterizado por cuatro bloques de negocio</p>
-<p><span style="color: brown"> | Bloque | Años de Promoción | Polizas | Suma Asegurada| Reserva | |:——–|——————-:|———-:|————–:|———:| |Gen-X | 1985-2004 | 17931 | 5384 | |<br />
-|Banca | 2000-2013 | 27192 | 2717 | | |Masivo | 2008-2015 | 49370 | 1816 | | |Gen-M | 2013-A la fecha | 5681 | 3413 | | |———|——————–|———–|—————|———-|</p>
+<p><span style="color: brown"></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Bloque</th>
+<th align="right">Años de Promoción</th>
+<th align="right">Polizas</th>
+<th align="right">Suma Asegurada</th>
+<th align="right">Reserva</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Gen-X</td>
+<td align="right">1985-2004</td>
+<td align="right">17931</td>
+<td align="right">5384</td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left">Banca</td>
+<td align="right">2000-2013</td>
+<td align="right">27192</td>
+<td align="right">2717</td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">Masivo</td>
+<td align="right">2008-2015</td>
+<td align="right">49370</td>
+<td align="right">1816</td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left">Gen-M</td>
+<td align="right">2013-A la fecha</td>
+<td align="right">5681</td>
+<td align="right">3413</td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">———</td>
+<td align="right">——————–</td>
+<td align="right">———–</td>
+<td align="right">—————</td>
+<td align="right">———-</td>
+</tr>
+</tbody>
+</table>
 <div id="section-gen-x" class="section level4">
 <h4><span style="color: chocolate">Gen X</span></h4>
 <details>
@@ -2488,16 +2548,16 @@ learnr:::store_exercise_cache("bienvenida", list(setup = NULL, chunks = list(lis
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "duda01", question = structure("Cual es la razón por la que se actualizo VarExponencial de 1 componente a 10 componentes", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8207ea7", 
+"character")), answers = list(structure(list(id = "lnr_ans_1e68b33", 
     option = "Por que Índice tiene 10 componentes", value = "Por que Índice tiene 10 componentes", 
     label = structure("Por que Índice tiene 10 componentes", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Si bien Índice tiene 10 componentes, esta no es la razón", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_c94a9cc", option = "Por que la función exp, regresa un valor por cada uno de los componentes del parámetro de entrada", 
+)), structure(list(id = "lnr_ans_4258568", option = "Por que la función exp, regresa un valor por cada uno de los componentes del parámetro de entrada", 
     value = "Por que la función exp, regresa un valor por cada uno de los componentes del parámetro de entrada", 
     label = structure("Por que la función exp, regresa un valor por cada uno de los componentes del parámetro de entrada", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_327b0ea", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_18e08f2", 
     option = "Por que se actualizo el atributo length de la variable", 
     value = "Por que se actualizo el atributo length de la variable", 
     label = structure("Por que se actualizo el atributo length de la variable", html = TRUE, class = c("html", 
@@ -2511,7 +2571,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "duda01-answer", question = "duda01"), loading = structure("<strong>Loading:<\u002fstrong> \nCual es la razón por la que se actualizo VarExponencial de 1 componente a 10 componentes\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 671726428.187203, options = list()), class = c("learnr_radio", 
+    seed = 1328250436.38149, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
@@ -2659,23 +2719,23 @@ learnr:::store_exercise_cache("tasa00", list(setup = NULL, chunks = list(list(la
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "duda02", question = structure("Verifica las expresiones aa&lt;-23%%2==1; sum(aa) ¿Determina si es válida?  ", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_e05d755", 
+"character")), answers = list(structure(list(id = "lnr_ans_2168d3c", 
     option = "La expresion no es valida, no se pueden combinar operadores aritméticos y lógicos en la misma expresión", 
     value = "La expresion no es valida, no se pueden combinar operadores aritméticos y lógicos en la misma expresión", 
     label = structure("La expresion no es valida, no se pueden combinar operadores aritméticos y lógicos en la misma expresión", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Es factible combinar varias operaciones en la misma expresión, siempre y cuando los resultados de izquierda a derecha sean consistentes", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_6f3f87d", option = "La primera operación es válida, la segunda no es válida", 
+)), structure(list(id = "lnr_ans_d463b76", option = "La primera operación es válida, la segunda no es válida", 
     value = "La primera operación es válida, la segunda no es válida", 
     label = structure("La primera operación es válida, la segunda no es válida", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("si la primera operación %% entrega um valor númerico es posible compararlo con 1", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_6bc6dbe", option = "La primera operación no es válida, la segunda es válida", 
+)), structure(list(id = "lnr_ans_413856", option = "La primera operación no es válida, la segunda es válida", 
     value = "La primera operación no es válida, la segunda es válida", 
     label = structure("La primera operación no es válida, la segunda es válida", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("El operador %% entrega el modulo/residuo de la división al compraro con 1 determina si el número es non", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_1ba7231", option = "Las dos son válidas", 
+)), structure(list(id = "lnr_ans_6ff1593", option = "Las dos son válidas", 
     value = "Las dos son válidas", label = structure("Las dos son válidas", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Bien, la expresión determina si el número es non", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
@@ -2687,7 +2747,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "duda02-answer", question = "duda02"), loading = structure("<strong>Loading:<\u002fstrong> \nVerifica las expresiones aa&lt;-23%%2==1; sum(aa) ¿Determina si es válida?<br/>\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1847261386.6398, options = list()), class = c("learnr_radio", 
+    seed = 299525548.360523, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
@@ -2734,22 +2794,22 @@ learnr:::store_exercise_cache("Ejer10", list(setup = NULL, chunks = list(list(la
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "duda03", question = structure("Verifica el resultado de la siguiente expresión A &lt;- !(3&lt;=(4/12+8/11) | 2&gt;2<sup>1/2<\u002fsup>)", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_afba2cd", 
+"character")), answers = list(structure(list(id = "lnr_ans_a8121a6", 
     option = "Es verdadera, porque 2 es mayor que raiz de 2", 
     value = "Es verdadera, porque 2 es mayor que raiz de 2", 
     label = structure("Es verdadera, porque 2 es mayor que raiz de 2", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Si bien 2 es mayor que raiz de dos y al evaluarlo en un expresión disyuntiva prevalece el valor verdadero, falta aplicar la negación", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_788d52", option = "Es falsa, por que  3<=(4/12+8/11) es falsa", 
+)), structure(list(id = "lnr_ans_dd7e0bf", option = "Es falsa, por que  3<=(4/12+8/11) es falsa", 
     value = "Es falsa, por que  3<=(4/12+8/11) es falsa", label = structure("Es falsa, por que  3&lt;=(4/12+8/11) es falsa", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Es necesario evaluar la expresión en su totalidad, si una de las expresiones en una comparación disyuntiva es verdadera entonces la expresión es verdadera y falta operar la negación", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_c684cb2", option = "Es falsa porque es la negación de una expresión verdadera", 
+)), structure(list(id = "lnr_ans_11f8110", option = "Es falsa porque es la negación de una expresión verdadera", 
     value = "Es falsa porque es la negación de una expresión verdadera", 
     label = structure("Es falsa porque es la negación de una expresión verdadera", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Correcto: Es la negación de una comparación disyuntiva verdadera en la que una componente (dos mayor que raiz de dos) es verdadera", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_e42019c", option = "Es falsa porque la expresión 3<=(4/12+8/11) | 2>2^(1/2) es falsa", 
+)), structure(list(id = "lnr_ans_ab778fc", option = "Es falsa porque la expresión 3<=(4/12+8/11) | 2>2^(1/2) es falsa", 
     value = "Es falsa porque la expresión 3<=(4/12+8/11) | 2>2^(1/2) es falsa", 
     label = structure("Es falsa porque la expresión 3&lt;=(4/12+8/11) | 2&gt;2<sup>1/2<\u002fsup> es falsa", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("La expresion 3&lt;=(4/12+8/11) | 2&gt;2<sup>1/2<\u002fsup> es verdadera, ya que una de las componentes es verdera", html = TRUE, class = c("html", 
@@ -2762,7 +2822,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "duda03-answer", question = "duda03"), loading = structure("<strong>Loading:<\u002fstrong> \nVerifica el resultado de la siguiente expresión A &lt;- !(3&lt;=(4/12+8/11) | 2&gt;2<sup>1/2<\u002fsup>)\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 858587190.600189, options = list()), class = c("learnr_radio", 
+    seed = 597088547.721959, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
@@ -2928,22 +2988,22 @@ learnr:::store_exercise_cache("vec100", list(setup = NULL, chunks = list(list(la
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "duda4000", question = structure("Cuales son las diferencias entre las expresiones sum(a&lt;3) y sum(a[a&lt;3])", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_ef1ef12", 
+"character")), answers = list(structure(list(id = "lnr_ans_e15cb7a", 
     option = "No hay diferencia, son expresiones semejantes", 
     value = "No hay diferencia, son expresiones semejantes", 
     label = structure("No hay diferencia, son expresiones semejantes", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("si hay diferencia una suma los valores verdaderos de una comparación logica y otra suma los valores de las componentes que dieron verdadero a la comparación logica", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_8bd0b1f", option = "No hay diferencia el resultado es el mismo", 
+)), structure(list(id = "lnr_ans_66af9d5", option = "No hay diferencia el resultado es el mismo", 
     value = "No hay diferencia el resultado es el mismo", label = structure("No hay diferencia el resultado es el mismo", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Si hay diferencia, en este caso el resultado es el mismo debido a que los valores menores a 3 son &#39;1&#39;, si modificas las componentes 1 y 5 con un valor de 2 verificaras que el resultado difiere", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_598ae91", option = "La diferencia es que sum(a<3) entrega la suma de los valores de las componentes que son mayores a 3 mientras que sum(a[a<3]) entrega la suma de la comparación logica", 
+)), structure(list(id = "lnr_ans_51f7699", option = "La diferencia es que sum(a<3) entrega la suma de los valores de las componentes que son mayores a 3 mientras que sum(a[a<3]) entrega la suma de la comparación logica", 
     value = "La diferencia es que sum(a<3) entrega la suma de los valores de las componentes que son mayores a 3 mientras que sum(a[a<3]) entrega la suma de la comparación logica", 
     label = structure("La diferencia es que sum(a&lt;3) entrega la suma de los valores de las componentes que son mayores a 3 mientras que sum(a[a&lt;3]) entrega la suma de la comparación logica", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Incorrecto, la interpretación esta invertida", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_9ca2659", option = "La diferencia es que sum(a[a<3]) entrega la suma de los valores de las componentes que son mayores a 3 mientras que  sum(a<3) entrega la suma de la comparación logica", 
+)), structure(list(id = "lnr_ans_7637afa", option = "La diferencia es que sum(a[a<3]) entrega la suma de los valores de las componentes que son mayores a 3 mientras que  sum(a<3) entrega la suma de la comparación logica", 
     value = "La diferencia es que sum(a[a<3]) entrega la suma de los valores de las componentes que son mayores a 3 mientras que  sum(a<3) entrega la suma de la comparación logica", 
     label = structure("La diferencia es que sum(a[a&lt;3]) entrega la suma de los valores de las componentes que son mayores a 3 mientras que  sum(a&lt;3) entrega la suma de la comparación logica", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = structure("Correcto, una suma valores lógicos verdaderos y otra suma el valor de esas componentes", html = TRUE, class = c("html", 
@@ -2956,7 +3016,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "duda4000-answer", question = "duda4000"), loading = structure("<strong>Loading:<\u002fstrong> \nCuales son las diferencias entre las expresiones sum(a<3) y sum(a[a<3])\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 903858157.079108, options = list()), class = c("learnr_radio", 
+    seed = 2082340606.53033, options = list()), class = c("learnr_radio", 
 "tutorial_question")))
 </script>
  
@@ -3006,35 +3066,35 @@ learnr:::store_exercise_cache("vec150", list(setup = NULL, chunks = list(list(la
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "duda4010", 
     question = structure("Si A&lt;- c(2,6,1,7,8,4) B&lt;-c(5,3,4) C&lt;- 7 cuales de las siguientes expresiones corresponden con el concepto: ", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_5af9aa3", 
-        option = "(A => B   Entrega un vector logico comparando las componentes de A con las de B", 
-        value = "(A => B   Entrega un vector logico comparando las componentes de A con las de B", 
-        label = structure("(A =&gt; B   Entrega un vector logico comparando las componentes de A con las de B", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("No corresponde, de hecho entrega un error el operador =&gt; no existe <br>", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_1220c42", 
+        option = "i)  (A => B   Entrega un vector logico comparando las componentes de A con las de B", 
+        value = "i)  (A => B   Entrega un vector logico comparando las componentes de A con las de B", 
+        label = structure("i)  (A =&gt; B   Entrega un vector logico comparando las componentes de A con las de B", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("i)  No corresponde, de hecho entrega un error el operador =&gt; no existe <br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_bd91fce", 
-        option = "(A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ", 
-        value = "(A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ", 
-        label = structure("(A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Correcto, el operador %/% representa la división entera, como B tienen menos componentes que A, los componentes de B se &#39;reutilizan´para completar la operación <br>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_87debd9", 
+        option = "ii)  (A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ", 
+        value = "ii)  (A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ", 
+        label = structure("ii)  (A %/% B   Entrega un vector numérico con la parte entera de la división de A entre B, repite los valores de B ", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("ii)  Correcto, el operador %/% representa la división entera, como B tienen menos componentes que A, los componentes de B se &#39;reutilizan´para completar la operación <br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6cc7af5", 
-        option = "(B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B", 
-        value = "(B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B", 
-        label = structure("(B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Correcto, el operador %*% producto punto multiplica los vectores componente a componente y suma estos productos <br>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3fd832b", 
+        option = "iii)  (B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B", 
+        value = "iii)  (B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B", 
+        label = structure("iii)  (B %*% B   Entrega un valor numérico con la suma de los cuadrados del vector B", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("iii)  Correcto, el operador %*% producto punto multiplica los vectores componente a componente y suma estos productos <br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4aa0130", 
-        option = "(A <- C  Compara cada componente de A con el valor de C", 
-        value = "(A <- C  Compara cada componente de A con el valor de C", 
-        label = structure("(A &lt;- C  Compara cada componente de A con el valor de C", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("In correcto, de hecho esta expresión esta asignando el valor C a la variable A <br>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d277650", 
+        option = "iv)  (A <- C  Compara cada componente de A con el valor de C", 
+        value = "iv)  (A <- C  Compara cada componente de A con el valor de C", 
+        label = structure("iv)  (A &lt;- C  Compara cada componente de A con el valor de C", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("iv)  In correcto, de hecho esta expresión esta asignando el valor C a la variable A <br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_201aea2", 
-        option = "(A %in% C  Es un error porque el vector A tiene mas componentes que el vector C", 
-        value = "(A %in% C  Es un error porque el vector A tiene mas componentes que el vector C", 
-        label = structure("(A %in% C  Es un error porque el vector A tiene mas componentes que el vector C", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Incorrecto, esta expresión es valida y entrega un vector logico en el que establece si cada componente de A esta incluida en C <br>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_27ab377", 
+        option = "v)  (A %in% C  Es un error porque el vector A tiene mas componentes que el vector C", 
+        value = "v)  (A %in% C  Es un error porque el vector A tiene mas componentes que el vector C", 
+        label = structure("v)  (A %in% C  Es un error porque el vector A tiene mas componentes que el vector C", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("v)  Incorrecto, esta expresión es valida y entrega un vector logico en el que establece si cada componente de A esta incluida en C <br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
@@ -3043,8 +3103,8 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "duda4010-answer", question = "duda4010"), loading = structure("<strong>Loading:<\u002fstrong> \nSi A&lt;- c(2,6,1,7,8,4) B&lt;-c(5,3,4) C&lt;- 7 cuales de las siguientes expresiones corresponden con el concepto: \n<br/><br/><br/>", html = TRUE, class = c("html", 
-    "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1472971701.31409, options = list()), class = c("learnr_checkbox", 
+    "character")), random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 1579408564.76453, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
@@ -3095,25 +3155,25 @@ learnr:::store_exercise_cache("vec200", list(setup = NULL, chunks = list(list(la
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "duda05", question = structure("Dado que A&lt;-c(4,8,12,20) B&lt;-c(3,,9,11,2) C&lt;-c(1,0,-4,7) cuales de las siguientes expresiones son válidas, sin modificar el contenido de los vectores, marca todas las expresiones válidas ", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_31ce2a0", 
-    option = "D<-C[A<=B]", value = "D<-C[A<=B]", label = structure("D&lt;-C[A&lt;=B]", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("Regresa el componente de C en los que el componente de A es menor que el de B.  <br> ", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_d104f79", 
+    option = "i)  D<-C[A<=B]", value = "i)  D<-C[A<=B]", label = structure("i)  D&lt;-C[A&lt;=B]", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("i) Regresa el componente de C en los que el componente de A es menor que el de B.  <br> ", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_7a63530", option = "D<- A U B ", 
-    value = "D<- A U B ", label = structure("D&lt;- A U B ", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("No hay ninguna instrucción o función en el comando el simbolo U es tomado como una variable.<br>", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_35a61c0", option = "ii)  D<- A U B ", 
+    value = "ii)  D<- A U B ", label = structure("ii)  D&lt;- A U B ", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("ii)  No hay ninguna instrucción o función en el comando el simbolo U es tomado como una variable.<br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_1f19a27", option = "D<-c(A,B,C)", 
-    value = "D<-c(A,B,C)", label = structure("D&lt;-c(A,B,C)", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("Concatena los tres conjuntos.<br>", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_e0820fe", option = "iii)  D<-c(A,B,C)", 
+    value = "iii)  D<-c(A,B,C)", label = structure("iii)  D&lt;-c(A,B,C)", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("iii)  Combina los tres conjuntos.<br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_45ed45c", option = "D<-C(A,B)", 
-    value = "D<-C(A,B)", label = structure("D&lt;-C(A,B)", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("Los paréntesis redondos de utilizan para llamar una función, la función C no existe. <br>", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_2d1cf06", option = "iv)  D<-C(A,B)", 
+    value = "iv)  D<-C(A,B)", label = structure("iv)  D&lt;-C(A,B)", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("iv)  Los paréntesis redondos de utilizan para llamar una función, la función C no existe. <br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_8a1f410", option = "D<-C[A,B]", 
-    value = "D<-C[A,B]", label = structure("D&lt;-C[A,B]", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("El vector C solo tiene una dimensión, el llamado [A,B] hace referencia a una matriz. <br>", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_a26118d", option = "v)  D<-C[A,B]", 
+    value = "v)  D<-C[A,B]", label = structure("v)  D&lt;-C[A,B]", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("v)  El vector C solo tiene una dimensión, el llamado [A,B] hace referencia a una matriz. <br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
 ))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
 "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
@@ -3122,39 +3182,39 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "duda05-answer", question = "duda05"), loading = structure("<strong>Loading:<\u002fstrong> \nDado que A&lt;-c(4,8,12,20) B&lt;-c(3,,9,11,2) C&lt;-c(1,0,-4,7) cuales de las siguientes expresiones son válidas, sin modificar el contenido de los vectores, marca todas las expresiones válidas \n<br/><br/><br/>", html = TRUE, class = c("html", 
-"character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 996857598.535802, options = list()), class = c("learnr_checkbox", 
+"character")), random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 666589780.689595, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "duda5010", 
     question = structure("Dados los vectores A&lt;-c(a1,a2,a3,a4) D&lt;-c(d1,d2) R&lt;-c(r1,r2) cuales son expresiones validas para que el vector D opere como un factor de descuento a las primeras dos componentes de A y el vector R opere como un recargo a las ultimas componentes de A, al vector S se le asigna la solución, marca todas las expresiones válidas ", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_27b25c5", 
-        option = "S<-A*c(1-D,1+R)", value = "S<-A*c(1-D,1+R)", 
-        label = structure("S&lt;-A*c(1-D,1+R)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Integra un vector de descuentos y recargos de cuatro componentes y lo opera con A .....<br>", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_f40d441", 
+        option = "i) S<-A*c(1-D,1+R)", value = "i) S<-A*c(1-D,1+R)", 
+        label = structure("i) S&lt;-A*c(1-D,1+R)", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("i) Integra un vector de descuentos y recargos de cuatro componentes y lo opera con A .....<br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ac29d9a", 
-        option = "S<-A[1:2]*(1-D)+A[3:4]*(1+R)", value = "S<-A[1:2]*(1-D)+A[3:4]*(1+R)", 
-        label = structure("S&lt;-A[1:2]<em>(1-D)+A[3:4]<\u002fem>(1+R)", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Este comado genera un vector de 2 componenetes que suma las dos primera componentes de A descontadas por D y los ultimas dos recargadas por R.....<br>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_149b738", 
+        option = "ii) S<-A[1:2]*(1-D)+A[3:4]*(1+R)", value = "ii) S<-A[1:2]*(1-D)+A[3:4]*(1+R)", 
+        label = structure("ii) S&lt;-A[1:2]<em>(1-D)+A[3:4]<\u002fem>(1+R)", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("ii) Este comando genera un vector de 2 componenetes que suma las dos primera componentes de A descontadas por D y los ultimas dos recargadas por R.....<br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4687ca9", 
-        option = "S<-c(A[1:2]*(1-D),A[3:4]*(1+R))", value = "S<-c(A[1:2]*(1-D),A[3:4]*(1+R))", 
-        label = structure("S&lt;-c(A[1:2]<em>(1-D),A[3:4]<\u002fem>(1+R))", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Determina las componentes de A con descuento y recargo y las combina en un vector de 4 componenetes.....<br>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_409c968", 
+        option = "iii) S<-c(A[1:2]*(1-D),A[3:4]*(1+R))", value = "iii) S<-c(A[1:2]*(1-D),A[3:4]*(1+R))", 
+        label = structure("iii) S&lt;-c(A[1:2]<em>(1-D),A[3:4]<\u002fem>(1+R))", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("iii) Determina las componentes de A con descuento y recargo y las combina en un vector de 4 componenetes.....<br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_554be62", 
-        option = "S <- c(A[1]*(1-C[1]),A[2]*(1-C[2]),A[3]*(1+R[1]),A[4]*(1+R[2]))", 
-        value = "S <- c(A[1]*(1-C[1]),A[2]*(1-C[2]),A[3]*(1+R[1]),A[4]*(1+R[2]))", 
-        label = structure("S &lt;- c(A[1]<em>(1-C[1]),A[2]<\u002fem>(1-C[2]),A[3]<em>(1+R[1]),A[4]<\u002fem>(1+R[2]))", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = structure("Cada componente de A se afecta por el descuento/recargo correspondiente.....<br>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cf00df1", 
+        option = "iv) S <- c(A[1]*(1-C[1]),A[2]*(1-C[2]),A[3]*(1+R[1]),A[4]*(1+R[2]))", 
+        value = "iv) S <- c(A[1]*(1-C[1]),A[2]*(1-C[2]),A[3]*(1+R[1]),A[4]*(1+R[2]))", 
+        label = structure("iv) S &lt;- c(A[1]<em>(1-C[1]),A[2]<\u002fem>(1-C[2]),A[3]<em>(1+R[1]),A[4]<\u002fem>(1+R[2]))", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = structure("iv) Cada componente de A se afecta por el descuento/recargo correspondiente.....<br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fab11ab", 
-        option = "S<-c(A[1:2]*D),A[3:4]*R))", value = "S<-c(A[1:2]*D),A[3:4]*R))", 
-        label = structure("S&lt;-c(A[1:2]*D),A[3:4]*R))", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("No determina los factores de descuento / recargo.....<br>", html = TRUE, class = c("html", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_72d14da", 
+        option = "v) S<-c(A[1:2]*D),A[3:4]*R))", value = "v) S<-c(A[1:2]*D),A[3:4]*R))", 
+        label = structure("v) S&lt;-c(A[1:2]*D),A[3:4]*R))", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = structure("v) No determina los factores de descuento / recargo.....<br>", html = TRUE, class = c("html", 
         "character"))), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
     "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
@@ -3163,8 +3223,8 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "duda5010-answer", question = "duda5010"), loading = structure("<strong>Loading:<\u002fstrong> \nDados los vectores A&lt;-c(a1,a2,a3,a4) D&lt;-c(d1,d2) R&lt;-c(r1,r2) cuales son expresiones validas para que el vector D opere como un factor de descuento a las primeras dos componentes de A y el vector R opere como un recargo a las ultimas componentes de A, al vector S se le asigna la solución, marca todas las expresiones válidas \n<br/><br/><br/>", html = TRUE, class = c("html", 
-    "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 419340586.804729, options = list()), class = c("learnr_checkbox", 
+    "character")), random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 412478664.807925, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
@@ -3868,34 +3928,35 @@ learnr:::store_exercise_cache("For700", list(setup = "x<-\"Edad,CNSF2000I\\n12,0
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "duda10", question = structure("Seleccione todos los errores de sintaxis:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3cdd6d0", 
-    option = "La condición de if debe indicarse entre paréntesis", 
-    value = "La condición de if debe indicarse entre paréntesis", 
-    label = structure("La condición de if debe indicarse entre paréntesis", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("Bien, la sintaxis es if (cond) {} else {}  <br>", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_b69341c", 
+    option = "i)   La condición de if debe indicarse entre paréntesis", 
+    value = "i)   La condición de if debe indicarse entre paréntesis", 
+    label = structure("i)   La condición de if debe indicarse entre paréntesis", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("i)   Bien, la sintaxis es if (cond) {} else {}  <br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_29c2d35", option = "El operador lógico de igualdad es incorrecto", 
-    value = "El operador lógico de igualdad es incorrecto", label = structure("El operador lógico de igualdad es incorrecto", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("EL operador correcto es ==  <br>", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_2cc71e5", option = "ii)  El operador lógico de igualdad es incorrecto", 
+    value = "ii)  El operador lógico de igualdad es incorrecto", 
+    label = structure("ii)  El operador lógico de igualdad es incorrecto", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("ii)  EL operador correcto es ==  <br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_306fc4b", option = "La expresión !condicion es incorrecta", 
-    value = "La expresión !condicion es incorrecta", label = structure("La expresión !condicion es incorrecta", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("EL operador ! es negación<br>", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_3f768f0", option = "iii) La expresión !condicion es incorrecta", 
+    value = "iii) La expresión !condicion es incorrecta", label = structure("iii) La expresión !condicion es incorrecta", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("iii) EL operador ! es negación<br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_f2f5dd6", option = "El operador logico de menor o igual es incorrecto<br>", 
-    value = "El operador logico de menor o igual es incorrecto<br>", 
-    label = structure("El operador logico de menor o igual es incorrecto<br>", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("EL operador correcto es &lt;=  ", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_62fb616", option = "iv) El operador logico de menor o igual es incorrecto<br>", 
+    value = "iv) El operador logico de menor o igual es incorrecto<br>", 
+    label = structure("iv) El operador logico de menor o igual es incorrecto<br>", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("iv) EL operador correcto es &lt;=  ", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_445860e", option = "La expresión false despues de else debe indicarse entre corchetes", 
-    value = "La expresión false despues de else debe indicarse entre corchetes", 
-    label = structure("La expresión false despues de else debe indicarse entre corchetes", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("No necesariamente, si es una expresion unica puede ir sin corchetes<br> ", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_68549", option = "v)   La expresión false despues de else debe indicarse entre corchetes", 
+    value = "v)   La expresión false despues de else debe indicarse entre corchetes", 
+    label = structure("v)   La expresión false despues de else debe indicarse entre corchetes", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("v)  No necesariamente, si es una expresion unica puede ir sin corchetes<br> ", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_ea4b58a", option = "No es factible cambiar el valor de epsilon porque forma parte de la condicion", 
-    value = "No es factible cambiar el valor de epsilon porque forma parte de la condicion", 
-    label = structure("No es factible cambiar el valor de epsilon porque forma parte de la condicion", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("La evaluación de la condición se realiza con el valor de las variables en ese punto del algoritmo, posteriormente puede modificarse cualquier variable<br>", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_c6f5149", option = "vi) No es factible cambiar el valor de epsilon porque forma parte de la condicion", 
+    value = "vi) No es factible cambiar el valor de epsilon porque forma parte de la condicion", 
+    label = structure("vi) No es factible cambiar el valor de epsilon porque forma parte de la condicion", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("vi) La evaluación de la condición se realiza con el valor de las variables en ese punto del algoritmo, posteriormente puede modificarse cualquier variable<br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
 ))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
 "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
@@ -3904,8 +3965,8 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "duda10-answer", question = "duda10"), loading = structure("<strong>Loading:<\u002fstrong> \nSeleccione todos los errores de sintaxis:\n<br/><br/><br/>", html = TRUE, class = c("html", 
-"character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 2044508122.04795, options = list()), class = c("learnr_checkbox", 
+"character")), random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 530318774.753051, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
@@ -3960,29 +4021,29 @@ learnr:::store_exercise_cache("control04", list(setup = NULL, chunks = list(list
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "duda11", question = structure("Cuales son las estrategias operativas que se reflejan en el modelo de ruina ", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8b3945f", 
-    option = "Realizar incrementos de capital ", value = "Realizar incrementos de capital ", 
-    label = structure("Realizar incrementos de capital ", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_4a58ee3", 
+    option = "i)   Realizar incrementos de capital ", value = "i)   Realizar incrementos de capital ", 
+    label = structure("i)   Realizar incrementos de capital ", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_653d558", 
-    option = "Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", 
-    value = "Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", 
-    label = structure("Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6d61024", 
+    option = "ii)  Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", 
+    value = "ii)  Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", 
+    label = structure("ii)  Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ecf2a3b", 
-    option = "Modificar la política de reaseguro", value = "Modificar la política de reaseguro", 
-    label = structure("Modificar la política de reaseguro", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("Si bien influye en el resultado del ejercicio no esta considerada en el modelo ", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f154ae9", 
+    option = "iii) Modificar la política de reaseguro", value = "iii) Modificar la política de reaseguro", 
+    label = structure("iii) Modificar la política de reaseguro", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("iii) Si bien influye en el resultado del ejercicio no esta considerada en el modelo ", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_216bc8d", option = "Modificar la política comercial, enfoque a nichos de SA mas baja", 
-    value = "Modificar la política comercial, enfoque a nichos de SA mas baja", 
-    label = structure("Modificar la política comercial, enfoque a nichos de SA mas baja", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_1d57b", option = "iv)  Modificar la política comercial, enfoque a nichos de SA mas baja", 
+    value = "iv)  Modificar la política comercial, enfoque a nichos de SA mas baja", 
+    label = structure("iv)  Modificar la política comercial, enfoque a nichos de SA mas baja", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("iv)  Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_dd745ec", option = "Modificar la política de suscripción, evitar riesgos subnormales ", 
-    value = "Modificar la política de suscripción, evitar riesgos subnormales ", 
-    label = structure("Modificar la política de suscripción, evitar riesgos subnormales ", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("Si tiene efecto sobre la desviación estándar de los siniestros", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_3b4e77a", option = "v)   Modificar la política de suscripción, evitar riesgos subnormales ", 
+    value = "v)   Modificar la política de suscripción, evitar riesgos subnormales ", 
+    label = structure("v)   Modificar la política de suscripción, evitar riesgos subnormales ", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("v)   Si tiene efecto sobre la desviación estándar de los siniestros", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
 ))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
 "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
@@ -3991,8 +4052,8 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "duda11-answer", question = "duda11"), loading = structure("<strong>Loading:<\u002fstrong> \nCuales son las estrategias operativas que se reflejan en el modelo de ruina \n<br/><br/><br/>", html = TRUE, class = c("html", 
-"character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1348372395.37212, options = list()), class = c("learnr_checkbox", 
+"character")), random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 1809167240.65754, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
@@ -4380,29 +4441,29 @@ learnr:::store_exercise_cache("FunPrimas", list(setup = NULL, chunks = list(list
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "duda22", question = structure("Cuales son las estrategias operativas que se reflejan en el modelo de ruina ", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_985d9c2", 
-    option = "Realizar incrementos de capital ", value = "Realizar incrementos de capital ", 
-    label = structure("Realizar incrementos de capital ", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_d500333", 
+    option = "i)    Realizar incrementos de capital ", value = "i)    Realizar incrementos de capital ", 
+    label = structure("i)    Realizar incrementos de capital ", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bd58d94", 
-    option = "Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", 
-    value = "Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", 
-    label = structure("Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_20aa0a3", 
+    option = "ii)   Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", 
+    value = "ii)   Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", 
+    label = structure("ii)   Modificar la política de pricing, considerar un margen de seguridad por arriba de los siniestros esperados", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b20338", 
-    option = "Modificar la política de reaseguro", value = "Modificar la política de reaseguro", 
-    label = structure("Modificar la política de reaseguro", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("<ul>\n<li>Si bien influye en el resultado del ejercicio no esta considerada en el modelo <br><\u002fli>\n<\u002ful>\n", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a931f57", 
+    option = "iii)  Modificar la política de reaseguro", value = "iii)  Modificar la política de reaseguro", 
+    label = structure("iii)  Modificar la política de reaseguro", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("iii) Si bien influye en el resultado del ejercicio no esta considerada en el modelo <br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_97121fb", option = "Modificar la política comercial, enfoque a nichos de SA mas baja", 
-    value = "Modificar la política comercial, enfoque a nichos de SA mas baja", 
-    label = structure("Modificar la política comercial, enfoque a nichos de SA mas baja", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = structure("<ul>\n<li>Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros <br><\u002fli>\n<\u002ful>\n", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_45f73a7", option = "iv)   Modificar la política comercial, enfoque a nichos de SA mas baja", 
+    value = "iv)   Modificar la política comercial, enfoque a nichos de SA mas baja", 
+    label = structure("iv)   Modificar la política comercial, enfoque a nichos de SA mas baja", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("iv)   Resultado incierto, puede afectar los siniestros pero tambien la prima, solo tiene efectos positivos si reduce la desviación estándar (volatilidad) de los siniestros <br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
-)), structure(list(id = "lnr_ans_3408e7d", option = "Modificar la política de suscripción, evitar riesgos subnormales ", 
-    value = "Modificar la política de suscripción, evitar riesgos subnormales ", 
-    label = structure("Modificar la política de suscripción, evitar riesgos subnormales ", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = structure("<ul>\n<li>Si tiene efecto sobre la desviación estándar de los siniestros <br><\u002fli>\n<\u002ful>\n", html = TRUE, class = c("html", 
+)), structure(list(id = "lnr_ans_ec0e114", option = "v)    Modificar la política de suscripción, evitar riesgos subnormales ", 
+    value = "v)    Modificar la política de suscripción, evitar riesgos subnormales ", 
+    label = structure("v)    Modificar la política de suscripción, evitar riesgos subnormales ", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = structure("v)    Si tiene efecto sobre la desviación estándar de los siniestros <br>", html = TRUE, class = c("html", 
     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"
 ))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", 
 "character")), try_again = structure("Try Again", html = TRUE, class = c("html", 
@@ -4411,8 +4472,8 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "duda22-answer", question = "duda22"), loading = structure("<strong>Loading:<\u002fstrong> \nCuales son las estrategias operativas que se reflejan en el modelo de ruina \n<br/><br/><br/>", html = TRUE, class = c("html", 
-"character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 1860221258.13377, options = list()), class = c("learnr_checkbox", 
+"character")), random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 1003662743.03263, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")))
 </script>
  
